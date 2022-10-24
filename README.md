@@ -1,9 +1,11 @@
-# chip __overflow__
-Chip Overflow - Where A Developer Learns, Shares, & Build his Career
+# chip overflow
+Chip __Overflow__ - Where A Developer Learns, Shares, & Build his Career
 
 # Hello, Interviewers!
 Easter eggs are fun, but is this really the time and place?
+
 `## =====> Hello, Interviewers!`
+
 I added a specific comment to anything I wanted to point out in my public repos.
 
 If you like to pay some attention to the man behind the curtain, but don't want to comb over every file with a toothpick, I added this breadcrumb trail for you.
