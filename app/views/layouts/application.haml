@@ -20,4 +20,8 @@
     %link{:href => "https://cdn.sstatic.net/Shared/Channels/channels.css?v=d098999fc478", :rel => "stylesheet", :type => "text/css"}/
   %body
     = render 'layouts/header'
-    = yield
+    .container
+      = render 'layouts/left_sidebar'
+      #content
+        -# = render 'layouts/signin'
+        = yield

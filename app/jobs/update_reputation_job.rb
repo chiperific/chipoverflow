@@ -36,7 +36,7 @@ class UpdateReputationJob < ApplicationJob
 
     update_hsh[:reputation] = parsed_page.at_css('#stats div.fs-body3').text.strip.gsub(',', '').to_i
 
-    return if update_hsh.values.map(&:nil?)
+    return if update_hsh.values.map(&:nil?).include? true
 
     update_hsh[:reputation_updated_at] = Time.now
 

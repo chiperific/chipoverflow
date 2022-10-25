@@ -15,11 +15,59 @@ I'm assuming you like to pay some attention to details, but don't want to read e
   - Something creative with inbox
   - Generalized searchbar
 
-2. Script to get:
-  - reputation
-  - gold badges
-  - silver badges
-  - bronze badges
+2. Left sidebar
+  - attributes `.youarehere{'aria-current' => 'true'}` set dynamically by page
+  - Design navigation:
+    * PUBLIC
+      - Questions (use as self-designed interview)
+      - Tags (mirrors collectives, plus soft-skills)
+      - <s>Users<s/>
+      - <s>Companies<s/>
+    * COLLECTIVES (use as language / framework references)
+      - Ruby
+      - Ruby on Rails
+      - PHP
+      - Wordpress
+      - Javascript
+      - JQuery
+    * TEAMS (use as work history)
+      - Michigan Natural Storage
+      - Pine Rest
+      - American Red Cross
+      - 20 Liters
+      - Mutually Human
+      - GiveCamp / Code for Good
+
+3. Author structure:
+  - name [Faker::Name](https://github.com/faker-ruby/faker/blob/main/lib/faker/default/name.rb)
+  - reputation (random #)
+  - identicon
+    -  `"https://www.gravatar.com/avatar/#{:random_number}?s=32&d=identicon&r=PG"`
+
+3. Post structure:
+  - Title (slug url?)
+  - title_slug
+  - body
+  - tags
+  - vote_count (button click incrementation)
+  - view_count (page load incrementation)
+  - question_id (when is an answer, self-referential)
+  - rank (for page positioning, timestamp.to_i to start out with, then increased / decreased as necessary for ranking)
+  - timestamps
+
+
+4. Comments structure:
+  - post_id
+  - body
+  - rank
+  - timestamps
+
+5. Sign-in modal
+  - `_signin.haml`
+  - w/ contact info
+  - and email form (as if it were a sign-in)
+  - and password form (disabled)
+
 
 3. Breadcrumb md page with links to all repos
 
