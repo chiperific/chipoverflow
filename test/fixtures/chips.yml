@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reputation: 1
+  gold: 1
+  silver: 1
+  bronze: 1
+
+two:
+  reputation: 1
+  gold: 1
+  silver: 1
+  bronze: 1

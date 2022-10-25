@@ -5,6 +5,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: 'application#homepage', as: :homepage
-
-  get '/reputation', to: 'chips#reputation', as: :reputation
 end
