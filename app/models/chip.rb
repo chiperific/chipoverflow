@@ -2,23 +2,19 @@
 
 ## =====> Hello, Interviewers!
 ## Metaprogramming Butchery: Make the class act like the only instance
-# There is only one Chip. Despite what the phonebook says
+# There is only one Chip (despite what the phonebook says).
 # Having to do `@chip = Chip.first` is dumb
-# I want to do `Chip.address` etc.
+# I am a proper noun and expect to be treated like one.
 #
-# Note: this is a terrible design patter for ANY situation.
+# Note: I know this is a terrible design pattern for ANY situation.
 # I'm only doing this because I want to show that I have some grasp
 # on metaprogramming.
-#
-# I considered just having a Chip class with hard-coded methods/attributes,
-# but I wanted to be able to update reputation and badges from
-# Stack Overflow, so I needed a database record to store them onto.
 class Chip < ApplicationRecord
   # rubocop:disable Style/ClassVars
 
   # Weird how this method HAS to come before any call to it, but yeah...
   # try moving it down below `@@record =` into the class and
-  # see what happens.
+  # see what happens. Spoiler: method_missing
   def self.assign_record
     return first if any?
 
