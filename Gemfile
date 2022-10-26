@@ -6,6 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 gem 'bootsnap', require: false
+# generate fake Author names on the fly
+gem 'faker', '~> 2.23.0'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
