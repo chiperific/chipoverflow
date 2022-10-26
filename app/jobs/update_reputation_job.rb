@@ -40,6 +40,6 @@ class UpdateReputationJob < ApplicationJob
 
     update_hsh[:reputation_updated_at] = Time.now
 
-    Chip.first.update(update_hsh)
+    Chip.update(update_hsh)
   end
 end

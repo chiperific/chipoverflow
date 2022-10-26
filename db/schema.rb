@@ -21,11 +21,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_180939) do
   end
 
   create_table "chips", force: :cascade do |t|
-    t.string "name", default: "Chip Kragt"
-    t.string "phone", default: "616.528.8140"
-    t.string "address", default: "1001 Alexander St SE, Grand Rapids, MI 49507"
-    t.string "gravatar_url", default: "https://www.gravatar.com/avatar/5c7a5fcd85529e17f9aa86c1e9a5490e?s=48&d=identicon&r=PG", null: false
-    t.integer "so_id", default: 1880203, null: false
+    t.string "name"
+    t.string "phone"
+    t.string "address"
+    t.string "gravatar_url"
+    t.integer "so_id"
     t.integer "reputation"
     t.integer "gold"
     t.integer "silver"
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_180939) do
     t.bigint "author_id", null: false
     t.bigint "post_id", null: false
     t.text "body"
-    t.integer "rank", default: 1666724186, null: false
+    t.integer "rank", default: 1666753978, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_comments_on_author_id"
@@ -51,8 +51,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_180939) do
     t.text "body"
     t.integer "votes"
     t.integer "views"
+    t.boolean "accepted", default: false, null: false
     t.bigint "question_id"
-    t.integer "rank", default: 1666724186, null: false
+    t.integer "rank", default: 1666753978, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_posts_on_author_id"
@@ -66,8 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_180939) do
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "comments", "authors"
