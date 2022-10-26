@@ -12,8 +12,5 @@ class Author < ApplicationRecord
     self.name ||= Faker::Name.name
     self.reputation ||= Faker::Number.number(digits: 4)
     self.identicon_url ||= "https://www.gravatar.com/avatar/#{Faker::Alphanumeric.alphanumeric(number: 32)}?s=48&d=identicon&r=PG"
-
-    save
-    reload
   end
 end
