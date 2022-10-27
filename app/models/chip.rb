@@ -41,25 +41,22 @@ class Chip < ApplicationRecord
   end
 
   def self.update(args)
+    # Mini::Test can get out of sync with setup and teardowns
+    @@record = assign_record
+
     @@record.update(args)
   end
 
-  validate :highlander_clause
-  before_destroy :immortality_clause
+  validate :highlander_clause, if: :new_record?
 
   private
 
   def highlander_clause
-    # refuse to make more of me.
-    return if id == @@record.id
+    return if Chip.all.size.zero?
 
+    # refuse to make more of me.
     errors.add(:name, 'There can be only one Chip here.')
     false
-  end
-
-  def immortality_clause
-    # refuse to delete the first instance of me.
-    return false if self == Chip.first
   end
 
   @@record
