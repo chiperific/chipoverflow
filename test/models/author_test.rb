@@ -3,18 +3,15 @@
 require 'test_helper'
 
 class AuthorTest < ActiveSupport::TestCase
-  context 'relationships' do
-    subject { Author.new }
+  subject { Author.new }
 
-    should have_many :posts
-    should have_many :comments
-    should have_many :questions
-    should have_many :answers
-  end
+  should have_many :posts
+  should have_many :comments
+  should have_many :questions
+  should have_many :answers
 
   context 'initialization' do
     context 'with no details provided' do
-      subject { Author.new }
       should allow_value(nil).for(:name)
       should allow_value(nil).for(:reputation)
       should allow_value(nil).for(:identicon_url)

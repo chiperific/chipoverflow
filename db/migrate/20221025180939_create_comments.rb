@@ -6,7 +6,7 @@ class CreateComments < ActiveRecord::Migration[7.0]
       t.belongs_to :author, null: false, foreign_key: true
       t.belongs_to :post, null: false, foreign_key: true
       t.text :body
-      t.integer :rank, null: false, default: Time.now.to_i
+      t.integer :rank, null: false, index: true
 
       t.timestamps
     end

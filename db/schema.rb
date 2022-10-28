@@ -37,11 +37,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_180939) do
     t.bigint "author_id", null: false
     t.bigint "post_id", null: false
     t.text "body"
-    t.integer "rank", default: 1666753978, null: false
+    t.integer "rank", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["rank"], name: "index_comments_on_rank"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -53,11 +54,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_180939) do
     t.integer "views"
     t.boolean "accepted", default: false, null: false
     t.bigint "question_id"
-    t.integer "rank", default: 1666753978, null: false
+    t.integer "rank", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["question_id"], name: "index_posts_on_question_id"
+    t.index ["rank"], name: "index_posts_on_rank"
+    t.index ["votes"], name: "index_posts_on_votes"
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|

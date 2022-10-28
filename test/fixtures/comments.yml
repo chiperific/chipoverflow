@@ -1,13 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   author: one
-#   post: one
-#   body: MyText
-#   rank: 1
-
-# two:
-#   author: two
-#   post: two
-#   body: MyText
-#   rank: 1
+valid:
+  author: valid
+  post: valid_question
+  body: <div>Hello, from <strong>a fixture</strong></div>
+  rank: <%= Time.now.to_i %>
