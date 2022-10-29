@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-require "test_helper"
+require 'test_helper'
 
 class TagTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should have_and_belong_to_many :posts
+  should validate_presence_of :name
 end

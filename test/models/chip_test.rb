@@ -44,10 +44,6 @@ class ChipTest < ActiveSupport::TestCase
       Chip.assign_record
     end
 
-    teardown do
-      Chip.destroy_all
-    end
-
     should 'create public class methods to mirror instance attributes' do
       @instance = Chip.first
       keys = Chip.first.attributes.keys.map(&:to_sym)
@@ -73,10 +69,6 @@ class ChipTest < ActiveSupport::TestCase
 
   context 'Chip#highlander_clause' do
     context 'when no instances exist' do
-      setup do
-        Chip.destroy_all
-      end
-
       should 'allow the instance to be created' do
         assert_equal Chip.all.size, 0
 

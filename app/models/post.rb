@@ -12,9 +12,8 @@ class Post < ApplicationRecord
   belongs_to :question, class_name: 'Post'
   has_and_belongs_to_many :tags
 
-  scope :only_questions, -> { where.not(question_id: nil) }
-  scope :only_answers, -> { where(question_id: nil) }
-  scope :siblings, -> { where(question_id).where.not(id) }
+  scope :only_questions, -> { where(question_id: nil) }
+  scope :only_answers, -> { where.not(question_id: nil) }
 
   before_save :create_author, if: -> { author.nil? }
 
@@ -35,17 +34,21 @@ class Post < ApplicationRecord
   end
 
   def is_accepted_answer?
-    is_answer? && accepted
+    is_answer? && accepted?
   end
 
   def is_answer?
     question_id.present?
   end
 
+  def siblings
+    Post.where(question_id: question_id).where.not(id: id)
+  end
+
   private
 
   def create_author
-    self.author = Author.new
+    self.author = Author.create
   end
 
   def ensure_single_accepted_answer

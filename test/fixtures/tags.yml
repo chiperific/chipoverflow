@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   name: MyString
+# ruby:
+#   name: ruby
 
-# two:
-#   name: MyString
+# ruby-on-rails:
+#   name: ruby on rails
+
+# jquery:
+#   name: jquery
+
+# html:
+#   name: html

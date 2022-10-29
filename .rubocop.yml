@@ -40,6 +40,8 @@ Style/BlockComments:
   Enabled: false
 Style/EmptyLiteral:
   Enabled: false
+Style/HashSyntax:
+  Enabled: false
 Style/InlineComment:
   Enabled: false
 Style/Documentation:
