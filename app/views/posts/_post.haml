@@ -1,0 +1,24 @@
+-# frozen_string_literal: true
+
+.s-post-summary.js-post-summary{id: "question-summary-#{post.id}"}
+  .s-post-summary--stats.js-post-summary-stats
+    .s-post-summary--stats-item.s-post-summary--stats-item__emphasized
+      %span.s-post-summary--stats-item-number= post.votes.to_i
+      %span.s-post-summary--stats-item-unit votes
+    %div{class: ".s-post-summary--stats-item #{ 'has-answers' if post.answers.size.positive? }"}
+      %span.s-post-summary--stats-item-number= post.answers.size
+      %span.s-post-summary--stats-item-unit answers
+    .s-post-summary--stats-item
+      %span.s-post-summary--stats-item-number= post.views.to_i
+      %span.s-post-summary--stats-item-unit views
+  .s-post-summary--content
+    %h3.s-post-summary--content-title
+      = link_to post.title, show_post_path(id: post.id, title_slug: post.title_slug), class: 's-link'
+    .s-post-summary--content-excerpt
+      = post.body_plain_text
+    .s-post-summary--meta
+      .s-post-summary--meta-tags.tags.js-tags
+        %ul.ml0.list-ls-none.js-post-tag-list-wrapper.d-inline
+          - post.tags.each do |tag|
+            %li.d-inline.mr4.js-post-tag-list-item
+              = link_to tag.name, '#', class: 'post-tag flex--item mt0'
