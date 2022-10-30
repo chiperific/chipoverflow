@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   # just mimicking what StackOverflow does
   # maybe it's for SEO?
   get '/questions/:id/:title_slug', to: 'posts#show', as: 'show_post'
+
+  get '/search', to: 'posts#search', as: 'search_posts'
 end

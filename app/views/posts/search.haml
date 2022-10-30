@@ -1,0 +1,15 @@
+.d-flex.fw-wrap.mb12
+  %h1.flex--item.fl1.fs-headline1.mr12.mb12 Search Results
+.filters
+  .d-flex.ai-center.jc-space-between.mb12.sm:fd-column.sm:ai-stretch
+    .fs-body3.flex--item.fl1.mr12.sm:mr0.sm:mb12
+      = pluralize(@posts_searched.size, 'result')
+    .uql-nav.flex--item
+      .d-flex.ai-center.jc-space-between
+        .js-uql-navigation.s-btn-group.flex--item.mr16.ff-row-nowrap
+          %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: "/searcj?tab=Relevance&q=#{@q}"}
+            .flex--item Relevance
+          %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: "/searcj?tab=Newest&q=#{@q}"}
+            .flex--item Newest
+.flush-left#questions
+  = render @posts

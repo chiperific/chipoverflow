@@ -7,11 +7,11 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :title_slug
       t.text :body
-      t.integer :votes, index: true
-      t.integer :views
+      t.integer :votes, default: 0, null: false, index: true
+      t.integer :views, default: 0, null: false
       t.boolean :accepted, null: false, default: false
       t.references :question, foreign_key: { to_table: :posts }
-      t.integer :rank, null: false, index: true
+      t.integer :rank, default: 0, null: false, index: true
 
       t.timestamps
     end

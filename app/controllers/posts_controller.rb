@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[edit update]
+  before_action :set_post, only: %i[show edit update]
   def new
     @post = Post.new
   end
@@ -26,7 +26,22 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @post.update_column(views: @post.views++)
+  end
+
+  def search
+    redirect_to homepage_path if search_params.nil? || search_params.empty?
+
+    @q = search_params
+
+    @posts_searched = Post.containing(@q)
+
+    @posts = @posts_searched.any? ? @posts_searched : Post.all
+
+    # debugger
+    console
+  end
 
   private
 
@@ -36,5 +51,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def search_params
+    params[:q]
   end
 end

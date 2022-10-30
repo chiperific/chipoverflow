@@ -16,6 +16,9 @@ class Post < ApplicationRecord
 
   scope :only_questions, -> { where(question_id: nil).order(rank: :asc) }
   scope :only_answers, -> { where.not(question_id: nil).order(rank: :asc) }
+  scope :with_body_containing, ->(query) { joins(:rich_text_body).merge(ActionText::RichText.with_body_containing(query)) }
+  scope :with_title_containing, ->(query) { where('LOWER(title) ILIKE any ( array[?] )', query.split.map { |v| "%#{v.downcase}%" }) }
+  scope :containing, ->(query) { with_body_containing(query).or(with_title_containing(query)) }
 
   before_save :create_author, if: -> { author.nil? }
   before_save :set_title_slug, if: -> { will_save_change_to_title? }
@@ -24,7 +27,24 @@ class Post < ApplicationRecord
   after_update :ensure_single_accepted_answer, if: -> { accepted? }
 
   def body_plain_text
-    body.to_plain_text.gsub("\n", '')
+    body.plain_text_body.gsub("\n", '')
+  end
+
+  ## Temp function to generate development data for the seed file
+  # run Post.all.map { |r| p r.for_seed }
+  #
+  def for_seed
+    {
+      id: id,
+      title: title,
+      title_slug: title_slug,
+      body: body.to_s,
+      votes: votes,
+      views: views,
+      accepted: accepted,
+      question_id: question_id,
+      rank: rank
+    }
   end
 
   def has_accepted_answer?

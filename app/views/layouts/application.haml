@@ -23,5 +23,7 @@
     .container
       = render 'layouts/left_sidebar'
       #content
-        #mainbar.no-sidebar{role: 'main'}
+        #mainbar{role: 'main'}
           = yield
+        #sidebar{role: 'complementary'}
+          = render 'layouts/right_sidebar'
