@@ -11,6 +11,8 @@ I added a specific comment to anything I wanted to point out in my public repos.
 I'm assuming you like to pay some attention to details, but don't want to read every file, so I added this breadcrumb trail for you.
 
 # TODO
+1. Block post CUD functions on production
+
 1. Header has TODO links
   - Something creative with inbox
   - Generalized searchbar

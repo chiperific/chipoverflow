@@ -6,6 +6,8 @@ class Comment < ApplicationRecord
 
   validates_presence_of :body
 
+  has_rich_text :body
+
   before_create :create_author, if: -> { author_id.nil? }
   before_create :set_rank
 

@@ -10,3 +10,7 @@ header .logo {
   background-size: 100%;
   background-repeat: no-repeat;
 }
+
+#mainbar.no-sidebar {
+  // width: calc(100% - var(--su-static24));
+}

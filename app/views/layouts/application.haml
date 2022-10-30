@@ -2,26 +2,26 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}/
     %title Chip Overflow - Where A Developer Learns, Shares, &amp; Build his Career
-    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    %meta{content: 'width=device-width,initial-scale=1', name: 'viewport'}/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
     %link{href: 'http://fonts.cdnfonts.com/css/ff-din', rel: 'stylesheet'}/
-    %link{:href => "https://cdn.sstatic.net/Shared/stacks.css?v=5ad0f45f4799", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=0cc30ee01b86", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196", :rel => "shortcut icon"}/
-    %link{:href => "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196", :rel => "shortcut icon"}/
-    %link{:href => "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a", :rel => "image_src"}/
-    %meta{:content => "This is NOT StackOverflow. This is a living resume for one Chip Kragt.", :name => "description"}/
-    %meta{:content => "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0", :name => "viewport"}/
-    %link{:href => "https://cdn.sstatic.net/Shared/Channels/channels.css?v=d098999fc478", :rel => "stylesheet", :type => "text/css"}/
+    %link{href: 'https://cdn.sstatic.net/Shared/stacks.css?v=5ad0f45f4799', rel: 'stylesheet', type: 'text/css'}/
+    %link{href: 'https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=0cc30ee01b86', rel: 'stylesheet', type: 'text/css'}/
+
+    %link{href: asset_path('chipoverflow_glyph'), rel: 'shortcut icon'}/
+    %link{href: asset_path('chipoverflow_glyph'), rel: 'image_src'}/
+    %meta{content: 'This is NOT StackOverflow. This is a portfolio site for one Chip Kragt.', name: 'description'}/
+    %meta{content: 'width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0', name: 'viewport'}/
+    %link{href: 'https://cdn.sstatic.net/Shared/Channels/channels.css?v=d098999fc478', rel: 'stylesheet', type: 'text/css'}/
   %body
     = render 'layouts/header'
     .container
       = render 'layouts/left_sidebar'
       #content
-        -# = render 'layouts/signin'
-        = yield
+        #mainbar.no-sidebar{role: 'main'}
+          = yield

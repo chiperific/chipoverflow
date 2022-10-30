@@ -8,5 +8,8 @@ class ApplicationController < ActionController::Base
     @gold_badges = Chip.gold
     @silver_badges = Chip.silver
     @bronze_badges = Chip.bronze
+
+    @questions = Post.includes(:author).only_questions
+    @question_count = @questions.size
   end
 end

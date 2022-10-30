@@ -1,4 +1,5 @@
 -# frozen_string_literal: true
+- author = post.author
 
 .s-post-summary.js-post-summary{id: "question-summary-#{post.id}"}
   .s-post-summary--stats.js-post-summary-stats
@@ -22,3 +23,16 @@
           - post.tags.each do |tag|
             %li.d-inline.mr4.js-post-tag-list-item
               = link_to tag.name, '#', class: 'post-tag flex--item mt0'
+      .s-user-card.s-user-card__minimal
+        = link_to '#', class: 's-avatar s-avatar__16 s-user-card--avatar js-user-hover-target' do
+          .gravatar-wrapper-16
+            = image_tag author.identicon_url, width: 16, height: 16, class: 's-avatar--image'
+        .s-user-card--info
+          .s-user-card--link.d-flex.gs4
+            = link_to author.name, '#', class: 'flex--item'
+          %ul.s-user-card--awards
+            %li.s-user-card--rep
+              %span{dir: 'ltr'}= human_number author.reputation
+          %time.s-user-card--time
+            asked
+            %span.relativetime= human_time post.created_at

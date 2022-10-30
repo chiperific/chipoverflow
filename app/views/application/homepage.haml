@@ -1,0 +1,22 @@
+.d-flex.fw-wrap.mb12
+  %h1.flex--item.fl1.fs-headline1.mr12.mb12 All Questions
+.filters
+  .d-flex.ai-center.jc-space-between.mb12.sm:fd-column.sm:ai-stretch
+    .fs-body3.flex--item.fl1.mr12.sm:mr0.sm:mb12
+      = pluralize(@question_count, 'questions')
+    .uql-nav.flex--item
+      .d-flex.ai-center.jc-space-between
+        .js-uql-navigation.s-btn-group.flex--item.mr16.ff-row-nowrap
+          %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: '/questions?tab=Newest'}
+            .flex--item Newest
+          %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: '/questions?tab=Active'}
+            .flex--item Active
+          %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex.uql-nav--expanded-item{ href: '/questions?tab=Unanswered'}
+            .flex--item Unanswered
+        .flex--item
+          %button.s-btn.s-btn__filled.s-btn__sm.s-btn__icon.ws-nowrap{role: 'button'}
+            %svg.svg-icon.iconFilter{'aria-hidden' => 'true', height: '18', viewbox: '0 0 18 18', width: '18'}
+              %path{d: 'M2 4h14v2H2V4Zm2 4h10v2H4V8Zm8 4H6v2h6v-2Z'}
+            Filter
+.flush-left#questions
+  = render @questions

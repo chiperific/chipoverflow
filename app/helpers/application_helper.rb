@@ -8,4 +8,13 @@ module ApplicationHelper
 
     number_with_delimiter(integer, delimiter: ',')
   end
+
+  def human_time(time, local: true)
+    return '-' unless [Time, ActiveSupport::TimeWithZone].include? time.class
+
+    time = time.localtime if local
+
+    # "Oct 20 at 18:19"
+    time.strftime('%b %-d at %k:%M')
+  end
 end

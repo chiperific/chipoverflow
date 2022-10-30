@@ -6,18 +6,26 @@
 # Questions have question_id: nil
 #
 class Post < ApplicationRecord
-  belongs_to :author
+  belongs_to :author, optional: true
   has_many :comments, dependent: :destroy
   has_many :answers, class_name: 'Post', foreign_key: 'question_id', dependent: :destroy
-  belongs_to :question, class_name: 'Post'
+  belongs_to :question, class_name: 'Post', optional: true
   has_and_belongs_to_many :tags
 
-  scope :only_questions, -> { where(question_id: nil) }
-  scope :only_answers, -> { where.not(question_id: nil) }
+  has_rich_text :body
+
+  scope :only_questions, -> { where(question_id: nil).order(rank: :asc) }
+  scope :only_answers, -> { where.not(question_id: nil).order(rank: :asc) }
 
   before_save :create_author, if: -> { author.nil? }
+  before_save :set_title_slug, if: -> { will_save_change_to_title? }
+  before_create :set_rank
 
   after_update :ensure_single_accepted_answer, if: -> { accepted? }
+
+  def body_plain_text
+    body.to_plain_text.gsub("\n", '')
+  end
 
   def has_accepted_answer?
     # answers don't have answers
@@ -54,5 +62,22 @@ class Post < ApplicationRecord
   def ensure_single_accepted_answer
     siblings.where(accepted: true)
             .update_all(accepted: false)
+  end
+
+  def set_title_slug
+    # remove trailing and excessive whitespace
+    # remove non-word, non-space characters
+    # keep only the first 8 words
+    ary = title.squish
+               .remove(Constants::SYM_REGEX)
+               .split[0..7]
+
+    # remove stop words
+    # replace spaces with dashes
+    self.title_slug = (ary - Constants::STOP_WORDS).join('-')
+  end
+
+  def set_rank
+    self.rank = Time.now.to_i
   end
 end
