@@ -37,7 +37,7 @@ class Post < ApplicationRecord
     {
       id: id,
       title: title,
-      body: body.to_s,
+      body: body.to_trix_html,
       votes: votes,
       views: views,
       accepted: accepted,
@@ -66,6 +66,10 @@ class Post < ApplicationRecord
 
   def is_answer?
     question_id.present?
+  end
+
+  def is_question?
+    question_id.nil?
   end
 
   def modified?

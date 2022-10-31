@@ -11,6 +11,14 @@ class Comment < ApplicationRecord
   before_create :create_author, if: -> { author_id.nil? }
   before_create :set_rank
 
+  def for_seed
+    {
+      id: id,
+      post_id: post_id,
+      body: body.to_trix_html
+    }
+  end
+
   private
 
   def create_author

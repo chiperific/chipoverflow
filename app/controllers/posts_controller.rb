@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to homepage_path
+      redirect_to show_post_path(@post.id, @post.title_slug)
     else
       render :edit
     end
@@ -28,6 +28,15 @@ class PostsController < ApplicationController
 
   def show
     @post.update_column(:views, @post.views += 1)
+
+    @answer_sort_options =
+      [
+        ['Highest score (default)', 'scoredesc'],
+        ['Date modified (newest first)', 'modifieddesc'],
+        ['Date created (oldest first)', 'createdasc']
+      ]
+
+    @answers = @post.answers.order(rank: :desc)
   end
 
   def search

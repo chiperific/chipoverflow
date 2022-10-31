@@ -1,0 +1,21 @@
+-# frozen_string_literal: true
+
+- is_question = post.is_question?
+
+.d-flex.gs8.gsy.fw-wrap.jc-end.ai-start.pt4.mb16
+  .flex--item.mr16.fl1.w96
+    .js-post-menu.pt2
+      .d-flex.gs8.s-anchors.s-anchors__muted.fw-wrap
+        .flex--item
+          = link_to 'Share', '#', title: 'Short permalink to this question', rel: 'nofollow'
+        .flex--item
+          -# TODO: remove before production
+          = link_to 'Edit', edit_post_path(post), title: 'Revise and improve this post'
+        .flex--item
+          = link_to 'Close', '#', title: 'Vote to close this question (when closed, no new answers can be added)'
+        .flex--item
+          = link_to 'Delete', '#', title: 'Vote to delete this post'
+        .flex--item
+          = link_to 'Flag', '#', title: 'Flag this post for serious problems or moderator attention'
+  %div{ class: "post-signature flex--item #{'owner' if is_question}"}
+    = render 'authors/sig_box', { author: post.author, asked_at: human_time(post.created_at, year: true), is_question: is_question }

@@ -1,6 +1,8 @@
+-# frozen_string_literal: true
+
 .user-info.user-hover
   .user-action-time
-    asked
+    = "#{is_question ? 'asked' : 'answered'}"
     %span.relativetime= asked_at
   .user-gravatar32
     %a{href: 'https://stackoverflow.com/users/1880203', target: '_blank'}

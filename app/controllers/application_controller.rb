@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_badges
+    UpdateReputationJob.perform_now if Chip.reputation.zero?
+
     @reputation = Chip.reputation
     @gold_badges = Chip.gold
     @silver_badges = Chip.silver

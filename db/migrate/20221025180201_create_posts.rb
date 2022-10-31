@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
     create_table :posts do |t|
       t.belongs_to :author, null: false, foreign_key: true
       t.string :title
-      t.string :title_slug
+      t.string :title_slug, default: '', null: false
       t.text :body
       t.integer :votes, default: 0, null: false, index: true
       t.integer :views, default: 0, null: false

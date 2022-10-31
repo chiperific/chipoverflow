@@ -1,0 +1,17 @@
+-# frozen_string_literal: true
+
+.votecell.post-layout--left
+  .d-flex.jc-center.fd-column.ai-stretch.gs4.fc-black-200
+    -# TODO: session store to track upvotes/downvotes?
+    %button{class: "fjs-vote-up-btn lex--item s-btn s-btn__unset c-pointer #{ 'fc-theme-primary' if post.votes.positive? && (1..4).to_a.sample > 3 }"}
+      %svg.svg-icon.iconArrowUpLg{ width: '36', height: '36', viewbox: '0 0 36 36'}
+        %path{d: 'M2 25h32L18 9 2 25Z'}
+    .flex--item.d-flex.fd-column.ai-center.fc-black-500.fs-title.c-pointer
+      = human_number post.votes, display_zero: true
+    -# TODO: session store to track upvotes/downvotes?
+    %button{class: "js-vote-down-btn flex--item s-btn s-btn__unset c-pointer"}
+      %svg.svg-icon.iconArrowDownLg{ width: '36', height: '36', viewbox: '0 0 36 36'}
+        %path{d: 'M2 11h32L18 27 2 11Z'}
+    %button.js-saves-btn.s-btn.s-btn__unset.c-pointer.py4
+      %svg.js-saves-btn-unselected.svg-icon.iconBookmarkAlt{height: '18', viewbox: '0 0 18 18', width: '18'}
+        %path{d: 'm9 10.6 4 2.66V3H5v10.26l4-2.66ZM3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z'}

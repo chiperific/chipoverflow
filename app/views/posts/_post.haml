@@ -1,14 +1,16 @@
 -# frozen_string_literal: true
 - author = post.author
+- number_of_answers = post.answers.size
+- number_of_votes = post.votes.to_i
 
-.s-post-summary.js-post-summary{id: "question-summary-#{post.id}"}
-  .s-post-summary--stats.js-post-summary-stats
+.s-post-summary{id: "question-summary-#{post.id}"}
+  .s-post-summary--stats
     .s-post-summary--stats-item.s-post-summary--stats-item__emphasized
-      %span.s-post-summary--stats-item-number= post.votes.to_i
-      %span.s-post-summary--stats-item-unit votes
-    %div{class: ".s-post-summary--stats-item #{ 'has-answers' if post.answers.size.positive? }"}
-      %span.s-post-summary--stats-item-number= post.answers.size
-      %span.s-post-summary--stats-item-unit answers
+      %span.s-post-summary--stats-item-number= number_of_votes
+      %span.s-post-summary--stats-item-unit= 'vote'.pluralize(number_of_votes)
+    %div{class: "s-post-summary--stats-item #{'has-answers' if number_of_answers.positive?}"}
+      %span.s-post-summary--stats-item-number= number_of_answers
+      %span.s-post-summary--stats-item-unit= 'answer'.pluralize number_of_answers, 'answers'
     .s-post-summary--stats-item
       %span.s-post-summary--stats-item-number= post.views.to_i
       %span.s-post-summary--stats-item-unit views

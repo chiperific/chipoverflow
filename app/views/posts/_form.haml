@@ -1,9 +1,7 @@
 = form_with model: @post, data: {turbo: false} do |form|
   .field
-    = form.label :title
     = form.text_field :title
   .field
-    = form.label :body
     = form.rich_text_area :body
   .ul.ml0.list-ls-none.js-post-tag-list-wrapper.d-inline
     = form.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name, {include_hidden: false }, { class: 's-post-summary--meta-tags tags js-tags'}) do |b|
@@ -13,3 +11,4 @@
           = b.label
   .submit
     = form.submit
+    = link_to 'Cancel', homepage_path()
