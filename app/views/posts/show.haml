@@ -1,0 +1,66 @@
+.snippet-hidden{itemscope: ''}
+  .inner-content.clearfix
+    #question-header.d-flex.sm:fd-column
+      %h1.fs-headline1.ow-break-word.mb8.flex--item.fl1
+        = @post.title
+    .d-flex.fw-wrap.pb8.mb16.bb.bc-black-075
+      .flex--item.ws-nowrap.mr16.mb8
+        %span.fc-light.mr2 Asked
+        %time= human_time @post.created_at
+      - if @post.modified?
+        .flex--item.ws-nowrap.mr16.mb8
+          %span.fc-light.mr2 Modified
+          %time= human_time @post.updated_at
+      .flex--item.ws-nowrap.mr16.mb8
+        %span.fc-light.mr2 Viewed
+        %time= pluralize(@post.views, 'time')
+    #mainbar{role: 'main'}
+      #question.question
+        .post-layout
+          .votecell.post-layout--left
+            .d-flex.jc-center.fd-column.ai-stretch.gs4.fc-black-200
+              %button.js-vote-up-btn.flex--item.s-btn.s-btn__unset.c-pointer
+                %svg.svg-icon.iconArrowUpLg{:height => "36", :viewbox => "0 0 36 36", :width => "36"}
+                  %path{:d => "M2 25h32L18 9 2 25Z"}
+                .s-popover--arrow
+              .flex--item.d-flex.fd-column.ai-center.fc-black-500.fs-title.c-pointer
+                = human_number @post.votes, display_zero: true
+                .s-popover--arrow
+              %button.flex--item.s-btn.s-btn__unset.c-pointer
+                %svg.svg-icon.iconArrowDownLg{:height => "36", :viewbox => "0 0 36 36", :width => "36"}
+                  %path{:d => "M2 11h32L18 27 2 11Z"}
+                .s-popover--arrow
+              %button#saves-btn-70159214.js-saves-btn.s-btn.s-btn__unset.c-pointer.py4
+                %svg.js-saves-btn-unselected.svg-icon.iconBookmarkAlt{:height => "18", :viewbox => "0 0 18 18", :width => "18"}
+                  %path{:d => "m9 10.6 4 2.66V3H5v10.26l4-2.66ZM3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z"}
+          .postcell.post-layout--right
+            .s-prose{itemprop: 'text'}
+              = @post.body.to_s.html_safe
+            .mt24.mb12
+              .post-taglist.d-flex.gs4.gsy.fd-column
+                .d-flex.ps-relative.fw-wrap
+                  %ul.ml0.list-ls-none.d-inline
+                    = render @post.tags.order(:name)
+            .mb0
+              .mt16.d-flex.gs8.gsy.fw-wrap.jc-end.ai-start.pt4.mb16
+                .flex--item.mr16.fl1.w96
+                  .js-post-menu.pt2
+                    .d-flex.gs8.s-anchors.s-anchors__muted.fw-wrap
+                      .flex--item
+                        = link_to 'Share', '#', title: 'Short permalink to this question', rel: 'nofollow'
+                      .flex--item
+                        = link_to 'Edit', edit_post_path(@post), title: 'Revise and improve this post'
+                      .flex--item
+                        = link_to 'Close', '#', title: 'Vote to close this question (when closed, no new answers can be added)'
+                      .flex--item
+                        = link_to 'Delete', '#', title: 'Vote to delete this post'
+                      .flex--item
+                        = link_to 'Flag', '#', title: 'Flag this post for serious problems or moderator attention'
+                .post-signature.owner.flex--item
+                  = render 'authors/sig_box', { author: @post.author, asked_at: human_time(@post.created_at, year: true) }
+          .post-layout--right
+            -# TODO: add comments
+      #answers
+        -# TODO: add answers
+    #sidebar{role: 'complementary'}
+      = render 'layouts/right_sidebar'

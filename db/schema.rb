@@ -56,8 +56,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_224255) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
-    t.integer "reputation"
-    t.string "identicon_url"
+    t.integer "reputation", default: 0, null: false
+    t.integer "gold", default: 0, null: false
+    t.integer "silver", default: 0, null: false
+    t.integer "bronze", default: 0, null: false
+    t.string "gravatar_url"
   end
 
   create_table "chips", force: :cascade do |t|
@@ -65,11 +68,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_224255) do
     t.string "phone"
     t.string "address"
     t.string "gravatar_url"
-    t.integer "so_id"
-    t.integer "reputation"
-    t.integer "gold"
-    t.integer "silver"
-    t.integer "bronze"
+    t.integer "so_id", default: 0, null: false
+    t.integer "reputation", default: 0, null: false
+    t.integer "gold", default: 0, null: false
+    t.integer "silver", default: 0, null: false
+    t.integer "bronze", default: 0, null: false
     t.datetime "reputation_updated_at"
   end
 
@@ -90,11 +93,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_224255) do
     t.string "title"
     t.string "title_slug"
     t.text "body"
-    t.integer "votes"
-    t.integer "views"
+    t.integer "votes", default: 0, null: false
+    t.integer "views", default: 0, null: false
     t.boolean "accepted", default: false, null: false
     t.bigint "question_id"
-    t.integer "rank", null: false
+    t.integer "rank", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_posts_on_author_id"

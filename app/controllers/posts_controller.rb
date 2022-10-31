@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post.update_column(views: @post.views++)
+    @post.update_column(:views, @post.views += 1)
   end
 
   def search

@@ -22,15 +22,17 @@ class Author < ApplicationRecord
 
     self.name ||= Faker::Name.unique.name
     self.reputation ||= Faker::Number.unique.between(from: 0, to: 999)
-    self.identicon_url ||= "https://www.gravatar.com/avatar/#{Faker::Number.unique.number(digits: 8)}?s=48&d=identicon&r=PG"
+    self.gravatar_url ||= "https://www.gravatar.com/avatar/#{Faker::Number.unique.number(digits: 8)}?s=48&d=identicon&r=PG"
+
+    set_badges
   end
 
   # Convenience function for changing the Gravatar image
   def change_identicon!
-    self.identicon_url = "https://www.gravatar.com/avatar/#{Faker::Number.unique.number(digits: 8)}?s=48&d=identicon&r=PG"
+    self.gravatar_url = "https://www.gravatar.com/avatar/#{Faker::Number.unique.number(digits: 8)}?s=48&d=identicon&r=PG"
 
     save
-    reload.identicon_url
+    reload.gravatar_url
   end
 
   def change_reputation!
@@ -38,5 +40,11 @@ class Author < ApplicationRecord
 
     save
     reload.reputation
+  end
+
+  def set_badges
+    self.gold =   Faker::Number.between(from: 0, to: 5)
+    self.silver = Faker::Number.between(from: 0, to: 18)
+    self.bronze = Faker::Number.between(from: 0, to: 50)
   end
 end

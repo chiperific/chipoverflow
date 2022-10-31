@@ -37,7 +37,6 @@ class Post < ApplicationRecord
     {
       id: id,
       title: title,
-      title_slug: title_slug,
       body: body.to_s,
       votes: votes,
       views: views,
@@ -67,6 +66,10 @@ class Post < ApplicationRecord
 
   def is_answer?
     question_id.present?
+  end
+
+  def modified?
+    created_at.to_i < updated_at.to_i
   end
 
   def siblings

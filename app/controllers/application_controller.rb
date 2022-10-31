@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_badges
+  before_action :set_left_sidebar_highlighting
 
   def homepage
     UpdateReputationJob.perform_now
@@ -17,5 +18,12 @@ class ApplicationController < ActionController::Base
     @gold_badges = Chip.gold
     @silver_badges = Chip.silver
     @bronze_badges = Chip.bronze
+  end
+
+  def set_left_sidebar_highlighting
+    @highlight_home = action_name == 'homepage'
+    @highlight_questions = action_name == 'show' && controller_name == 'posts'
+
+    # TODO: fill in with more navigations
   end
 end
