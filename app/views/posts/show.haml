@@ -59,7 +59,11 @@
                 .post-signature.owner.flex--item
                   = render 'authors/sig_box', { author: @post.author, asked_at: human_time(@post.created_at, year: true) }
           .post-layout--right
-            -# TODO: add comments
+            .comments.bt.bc-black-075.mt12
+              %ul.comments-list
+                = render @post.comments
+            %div
+              %a.comments-link{ title: 'Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.', href: '#' } Add a comment
       #answers
         -# TODO: add answers
     #sidebar{role: 'complementary'}

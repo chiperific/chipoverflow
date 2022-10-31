@@ -26,7 +26,7 @@
       .s-user-card.s-user-card__minimal
         = link_to '#', class: 's-avatar s-avatar__16 s-user-card--avatar js-user-hover-target' do
           .gravatar-wrapper-16
-            = image_tag author.identicon_url, width: 16, height: 16, class: 's-avatar--image'
+            = image_tag author.gravatar_url, width: 16, height: 16, class: 's-avatar--image'
         .s-user-card--info
           .s-user-card--link.d-flex.gs4
             = link_to author.name, '#', class: 'flex--item'
