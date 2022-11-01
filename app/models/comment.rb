@@ -13,7 +13,6 @@ class Comment < ApplicationRecord
 
   def for_seed
     {
-      id: id,
       post_id: post_id,
       body: body.to_trix_html
     }

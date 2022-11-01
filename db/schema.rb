@@ -91,7 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_224255) do
   create_table "posts", force: :cascade do |t|
     t.bigint "author_id", null: false
     t.string "title"
-    t.string "title_slug"
+    t.string "title_slug", default: "", null: false
     t.text "body"
     t.integer "votes", default: 0, null: false
     t.integer "views", default: 0, null: false

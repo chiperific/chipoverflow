@@ -3,14 +3,17 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update]
   def new
-    @post = Post.new
+    @post = Post.new(question_id: question_params)
+
+    @question = Post.find(question_params) if question_params.present?
   end
 
   def create
-    @post = Post.new(posts_params)
+    @post = Post.new(post_params)
 
     if @post.save
-      redirect_to homepage_path
+      @post.reload
+      redirect_to_question(@post)
     else
       render :new
     end
@@ -20,7 +23,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to show_post_path(@post.id, @post.title_slug)
+      redirect_to_question(@post)
     else
       render :edit
     end
@@ -55,7 +58,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, tag_ids: [])
+    params.require(:post).permit(:title, :body, :question_id, tag_ids: [])
   end
 
   def set_post
@@ -64,5 +67,9 @@ class PostsController < ApplicationController
 
   def search_params
     params[:q]
+  end
+
+  def question_params
+    params[:question]
   end
 end

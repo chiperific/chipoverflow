@@ -1,14 +1,24 @@
+-# frozen_string_literal: true
+
 = form_with model: @post, data: {turbo: false} do |form|
-  .field
-    = form.text_field :title
+  - if @post.question_id.positive?
+    - if @post.new_record?
+      %h3= @question.title
+      = @question.body
+      .mb32
+      = form.hidden_field :question_id
+  - else
+    .field
+      = form.text_field :title
   .field
     = form.rich_text_area :body
-  .ul.ml0.list-ls-none.js-post-tag-list-wrapper.d-inline
-    = form.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name, {include_hidden: false }, { class: 's-post-summary--meta-tags tags js-tags'}) do |b|
-      %li.d-inline.mr4.js-post-tag-list-item
-        %span.post-tag.flex--item.mt0
-          = b.check_box
-          = b.label
+  - unless @post.question_id.positive?
+    .ul.ml0.list-ls-none.js-post-tag-list-wrapper.d-inline
+      = form.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name, {include_hidden: false }, { class: 's-post-summary--meta-tags tags js-tags'}) do |b|
+        %li.d-inline.mr4.js-post-tag-list-item
+          %span.post-tag.flex--item.mt0
+            = b.check_box
+            = b.label
   .submit
     = form.submit
     = link_to 'Cancel', homepage_path()

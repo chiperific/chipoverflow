@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   def create
     if @post.comments.create(comment_params)
-      redirect_to show_post_path(@post.id, @post.title_slug)
+      redirect_to_question(@post)
     else
       render :new
     end
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to show_post_path(@post.id, @post.title_slug)
+      redirect_to_question(@post)
     else
       render :edit
     end

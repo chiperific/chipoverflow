@@ -28,4 +28,12 @@ class ApplicationController < ActionController::Base
 
     # TODO: fill in with more navigations
   end
+
+  def redirect_to_question(post)
+    if post.is_question?
+      redirect_to show_post_path(post.id, post.title_slug)
+    else
+      redirect_to show_post_path(post.question.id, post.question.title_slug)
+    end
+  end
 end

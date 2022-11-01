@@ -38,11 +38,7 @@ class Post < ApplicationRecord
       id: id,
       title: title,
       body: body.to_trix_html,
-      votes: votes,
-      views: views,
-      accepted: accepted,
-      question_id: question_id,
-      rank: rank
+      question_id: question_id
     }
   end
 
