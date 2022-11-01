@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get '/questions/:id(/:title_slug)', to: 'posts#show', as: 'show_post'
 
   get '/search', to: 'posts#search', as: 'search_posts'
+
+  get '/search/:tag_name', to: 'tags#search', as: 'search_tags'
 end

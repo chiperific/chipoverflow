@@ -8,7 +8,10 @@
     .s-post-summary--stats-item.s-post-summary--stats-item__emphasized
       %span.s-post-summary--stats-item-number= number_of_votes
       %span.s-post-summary--stats-item-unit= 'vote'.pluralize(number_of_votes)
-    %div{class: "s-post-summary--stats-item #{'has-answers' if number_of_answers.positive?}"}
+    %div{class: "s-post-summary--stats-item #{'has-answers' if number_of_answers.positive?} #{'has-accepted-answer' if post.has_accepted_answer?}"}
+      - if post.has_accepted_answer?
+        %svg.svg-icon.iconCheckmarkSm{height: "14", viewbox: "0 0 14 14", width: "14"}
+          %path{:d => "M13 3.41 11.59 2 5 8.59 2.41 6 1 7.41l4 4 8-8Z"}
       %span.s-post-summary--stats-item-number= number_of_answers
       %span.s-post-summary--stats-item-unit= 'answer'.pluralize number_of_answers, 'answers'
     .s-post-summary--stats-item
@@ -22,9 +25,7 @@
     .s-post-summary--meta
       .s-post-summary--meta-tags.tags.js-tags
         %ul.ml0.list-ls-none.js-post-tag-list-wrapper.d-inline
-          - post.tags.each do |tag|
-            %li.d-inline.mr4.js-post-tag-list-item
-              = link_to tag.name, '#', class: 'post-tag flex--item mt0'
+          = render post.tags
       .s-user-card.s-user-card__minimal
         = link_to '#', class: 's-avatar s-avatar__16 s-user-card--avatar js-user-hover-target' do
           .gravatar-wrapper-16

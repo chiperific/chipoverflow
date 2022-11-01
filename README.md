@@ -24,7 +24,7 @@ I'm assuming you like to pay some attention to details, but don't want to read e
       - Questions (use as self-designed interview)
       - Tags (mirrors collectives, plus soft-skills)
       - <s>Users<s/>
-      - <s>Companies<s/>
+      - <s>Companies<s/>: traditional resume
     * COLLECTIVES (use as language / framework references)
       - Ruby
       - Ruby on Rails
@@ -48,6 +48,3 @@ I'm assuming you like to pay some attention to details, but don't want to read e
 
 
 3. Breadcrumb md page with links to all repos
-
-"//a[@href='/users/1880203/chiperific']"
-pg.at_xpath("//a[@href='/users/1880203/chiperific']//div[2]")

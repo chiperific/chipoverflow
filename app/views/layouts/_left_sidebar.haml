@@ -6,7 +6,7 @@
     %nav{role: 'navigation'}
       %ol.nav-links
         %li{class: "ps-relative #{'youarehere' if @highlight_home}"}
-          %a.pl8.js-gps-track.nav-links--link{"aria-controls" => "", "aria-current" => "page", "data-controller" => "", "data-s-popover-auto-show" => "true", "data-s-popover-hide-on-outside-click" => "never", "data-s-popover-placement" => "right", href: "/"}
+          %a.pl8.js-gps-track.nav-links--link{href: "/"}
             .d-flex.ai-center
               .flex--item.truncate
                 Home
@@ -15,7 +15,7 @@
             %li.fs-fine.tt-uppercase.ml8.mt16.mb4.fc-light Public
             %li{class: "ps-relative #{'youarehere' if @highlight_questions}"}
               %a#nav-questions.pl8.js-gps-track.nav-links--link.-link__with-icon{href: "/"}
-                %svg.svg-icon.iconGlobe{'aria-hidden' => 'true', height: "18", viewbox: "0 0 18 18", width: "18"}
+                %svg.svg-icon.iconGlobe{height: "18", viewbox: "0 0 18 18", width: "18"}
                   %path{d: "M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8ZM8 15.32a6.46 6.46 0 0 1-4.3-2.74 6.46 6.46 0 0 1-.93-5.01L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52Zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.45 6.45 0 0 1 3.83 4.51 6.45 6.45 0 0 1-1.51 5.73v.01Z"}
                 %span.-link--channel-name Questions
             %li.ps-relative
@@ -24,12 +24,12 @@
                   .flex--item.truncate
                     Tags
             %li.ps-relative
-              %a#nav-users.js-gps-track.nav-links--link{href: "/users"}
+              %a#nav-users.js-gps-track.nav-links--link{href: 'https://stackoverflow.com/users/1880203/chiperific', target: '_blank'}
                 .d-flex.ai-center
                   .flex--item.truncate
-                    Users
+                    Chip
             %li.ps-relative
-              %a#nav-companies.js-gps-track.nav-links--link{href: "https://stackoverflow.com/jobs/companies?so_medium=stackoverflow&so_source=SiteNav"}
+              %a#nav-companies.js-gps-track.nav-links--link{href: '#'}
                 .d-flex.ai-center
                   .flex--item.truncate
                     Companies
@@ -49,7 +49,7 @@
                 .d-flex.ai-center
                   .flex--item.s-avatar.va-middle.bg-orange-400
                     .s-avatar--letter.mtn1
-                      %svg.svg-icon.iconBriefcaseSm{'aria-hidden' => 'true', height: "14", viewbox: "0 0 14 14", width: "14"}
+                      %svg.svg-icon.iconBriefcaseSm{height: "14", viewbox: "0 0 14 14", width: "14"}
                         %path{d: "M4 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h.5c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5h-7A1.5 1.5 0 0 1 2 10.5v-5C2 4.67 2.67 4 3.5 4H4V3Zm5 1V3H5v1h4Z"}
                   .flex--item.pl6
                     Chip's Teams

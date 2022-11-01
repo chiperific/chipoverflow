@@ -15,3 +15,8 @@
     %button.js-saves-btn.s-btn.s-btn__unset.c-pointer.py4
       %svg.js-saves-btn-unselected.svg-icon.iconBookmarkAlt{height: '18', viewbox: '0 0 18 18', width: '18'}
         %path{d: 'm9 10.6 4 2.66V3H5v10.26l4-2.66ZM3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z'}
+    - if post.accepted?
+      .flex--item.fc-green-700.py6.mtn8
+        .ta-center
+          %svg.svg-icon.iconCheckmarkLg{height: '36', viewbox: '0 0 36 36', width: '36'}
+            %path{d: 'm6 14 8 8L30 6v8L14 30l-8-8v-8Z'}

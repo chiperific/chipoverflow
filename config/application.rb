@@ -36,3 +36,15 @@ module Chipoverflow
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+# rake seed_dump needs eager_load
+# which tries to load /app/application_cable/*
+module ActionCable
+  module Channel
+    class Base; end
+  end
+
+  module Connection
+    class Base; end
+  end
+end

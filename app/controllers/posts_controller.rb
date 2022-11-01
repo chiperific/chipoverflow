@@ -19,7 +19,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @question = @post.question if @post.is_answer?
+  end
 
   def update
     if @post.update(post_params)
@@ -58,7 +60,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :question_id, tag_ids: [])
+    params.require(:post).permit(:title, :body, :accepted, :question_id, tag_ids: [])
   end
 
   def set_post

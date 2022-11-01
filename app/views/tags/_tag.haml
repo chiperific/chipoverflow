@@ -1,3 +1,2 @@
 %li.d-inline.mr4
-  %a.post-tag{href: '#'}
-    = tag.name
+  = link_to tag.name, search_tags_path(tag.name), class: 'post-tag'

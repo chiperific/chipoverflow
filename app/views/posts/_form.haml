@@ -1,18 +1,20 @@
 -# frozen_string_literal: true
 
 = form_with model: @post, data: {turbo: false} do |form|
-  - if @post.question_id.positive?
-    - if @post.new_record?
+  - if @post&.question_id&.positive?
+    .mb32
       %h3= @question.title
       = @question.body
-      .mb32
-      = form.hidden_field :question_id
+    %span
+      = form.label :accepted
+      = form.check_box :accepted
+    = form.hidden_field :question_id
   - else
     .field
       = form.text_field :title
   .field
     = form.rich_text_area :body
-  - unless @post.question_id.positive?
+  - unless @post&.question_id&.positive?
     .ul.ml0.list-ls-none.js-post-tag-list-wrapper.d-inline
       = form.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name, {include_hidden: false }, { class: 's-post-summary--meta-tags tags js-tags'}) do |b|
         %li.d-inline.mr4.js-post-tag-list-item

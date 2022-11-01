@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_30_224255) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_01_185127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -113,6 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_224255) do
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
+    t.integer "score", default: 0, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
