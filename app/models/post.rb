@@ -37,8 +37,13 @@ class Post < ApplicationRecord
     {
       id: id,
       title: title,
+      title_slug: title_slug,
       body: body.to_trix_html,
-      question_id: question_id
+      question_id: question_id,
+      accepted: accepted,
+      views: views,
+      votes: votes,
+      rank: rank
     }
   end
 

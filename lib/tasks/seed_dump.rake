@@ -25,8 +25,12 @@ namespace :db do
       ].freeze
 
       File.open('db/seeds.rb', 'w+') do |file|
+        file.write(
+          "# frozen_string_literal: true\n\n"
+        )
+
         tables.each do |model|
-          puts "== Writing #{model}:"
+          print "Writing #{model}:\s"
           model_record_size = model.count
 
           # skip models with no records
@@ -45,8 +49,14 @@ namespace :db do
             "\n])\n\n"
           )
 
-          puts "==>>> #{model_record_size} records"
+          print "#{model_record_size} records seeded.\n"
         end
+
+        file.write(
+          "ActiveRecord::Base.connection.tables.each do |t|\n\tActiveRecord::Base.connection.reset_pk_sequence!(t)\nend"
+        )
+
+        puts 'Seeds planted, Boss.'
       end
     end
   end

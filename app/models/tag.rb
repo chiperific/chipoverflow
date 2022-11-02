@@ -11,6 +11,7 @@ class Tag < ApplicationRecord
 
   def for_seed
     {
+      id: id,
       name: name,
       score: score
     }

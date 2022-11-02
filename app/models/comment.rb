@@ -14,7 +14,8 @@ class Comment < ApplicationRecord
   def for_seed
     {
       post_id: post_id,
-      body: body.to_trix_html
+      body: body.to_trix_html,
+      rank: rank
     }
   end
 
