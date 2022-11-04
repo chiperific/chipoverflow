@@ -3,6 +3,9 @@
 #mainbar{role: 'main'}
   .d-flex.fw-wrap.mb12
     %h1.flex--item.fl1.fs-headline1.mr12.mb12 All Questions
+    .ml12.aside-cta.flex--item
+      -# TODO: remove before production
+      = link_to 'Ask Question', new_post_path, class: 'ws-nowrap s-btn s-btn__primary'
   .filters
     .d-flex.ai-center.jc-space-between.mb12.sm:fd-column.sm:ai-stretch
       .fs-body3.flex--item.fl1.mr12.sm:mr0.sm:mb12
@@ -18,7 +21,7 @@
               .flex--item Unanswered
           .flex--item
             %button.s-btn.s-btn__filled.s-btn__sm.s-btn__icon.ws-nowrap{role: 'button'}
-              %svg.svg-icon.iconFilter{'aria-hidden' => 'true', height: '18', viewbox: '0 0 18 18', width: '18'}
+              %svg.svg-icon.iconFilter{height: '18', viewbox: '0 0 18 18', width: '18'}
                 %path{d: 'M2 4h14v2H2V4Zm2 4h10v2H4V8Zm8 4H6v2h6v-2Z'}
               Filter
   .flush-left#questions

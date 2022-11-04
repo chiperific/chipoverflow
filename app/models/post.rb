@@ -19,6 +19,7 @@ class Post < ApplicationRecord
   scope :with_body_containing, ->(query) { joins(:rich_text_body).merge(ActionText::RichText.with_body_containing(query)) }
   scope :with_title_containing, ->(query) { where('LOWER(title) ILIKE any ( array[?] )', query.split.map { |v| "%#{v.downcase}%" }) }
   scope :containing, ->(query) { with_body_containing(query).or(with_title_containing(query)) }
+  scope :ordered_randomly, -> { order(Arel.sql('RANDOM()')) }
 
   before_save :create_author, if: -> { author.nil? }
   before_save :set_title_slug, if: -> { will_save_change_to_title? }
@@ -106,6 +107,6 @@ class Post < ApplicationRecord
   end
 
   def set_rank
-    self.rank = Time.now.to_i
+    self.rank = (Time.now.to_i / 8)
   end
 end

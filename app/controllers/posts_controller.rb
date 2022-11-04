@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update]
+  before_action :set_post, only: %i[show edit update vote bookmark]
   def new
     @post = Post.new(question_id: question_params)
 
@@ -52,9 +52,51 @@ class PostsController < ApplicationController
     @posts_searched = Post.containing(@q)
 
     @posts = @posts_searched.any? ? @posts_searched : Post.all
+  end
 
-    # debugger
-    console
+  def vote
+    # =====> Hello, Interviewers!
+    #
+    # this endpoint gets hit by a Stimulus controller
+    # it decides how to in/decrement the @post's vote count
+    # and saves a record of the vote state into the session cookie
+    # it's a light-weight imitation of SO functionality
+    # and gives the user some persistent state history
+    # about votes and bookmarks.
+    #
+    # In true Rails 7 style, I'm returning an HTML slug
+    set_vote_directions
+
+    # already voted in this direction
+    if helpers.session_has_record(@post.id, @direction, 'posts')
+      remove_session_record(@post.id, @direction, 'posts')
+      @post.update(votes: @post.votes - @vote_change)
+    else
+      # already voted in opposite direction
+      if helpers.session_has_record(@post.id, @opposite, 'posts')
+        remove_session_record(@post.id, @opposite, 'posts')
+        @vote_change *= 2
+      end
+
+      add_session_record(@post.id, @direction, 'posts')
+      @post.update(votes: @post.votes + @vote_change)
+    end
+
+    @post.reload
+
+    render 'vote_buttons', layout: false
+  end
+
+  def bookmark
+    if helpers.session_has_record(@post.id, 'bookmarked', 'posts')
+      remove_session_record(@post.id, 'bookmarked', 'posts')
+    else
+      add_session_record(@post.id, 'bookmarked', 'posts')
+    end
+
+    @post.reload
+
+    render 'vote_buttons', layout: false
   end
 
   private
@@ -73,5 +115,12 @@ class PostsController < ApplicationController
 
   def question_params
     params[:question]
+  end
+
+  def set_vote_directions
+    @direction = params[:d]
+    @opposite = (%w[downvoted upvoted] - [@direction])[0]
+
+    @vote_change = Constants::VOTE_CHANGE[@direction]
   end
 end

@@ -26,6 +26,7 @@ class Comment < ApplicationRecord
   end
 
   def set_rank
-    self.rank = Time.now.to_i
+    # rank is 4 bytes max
+    self.rank = (Time.now.to_i / 8)
   end
 end

@@ -1,0 +1,32 @@
+-# frozen_string_literal: true
+
+- state_hash = session_info_for(@post.id, 'posts')
+
+-# upvote button
+%button{ class: "flex--item s-btn s-btn__unset c-pointer #{'fc-theme-primary' if state_hash[:upvoted]}", data: { action: 'click->posts#upvote' } }
+  %svg.svg-icon.iconArrowUpLg{ width: '36', height: '36', viewbox: '0 0 36 36' }
+    %path{ d: 'M2 25h32L18 9 2 25Z' }
+
+.flex--item.d-flex.fd-column.ai-center.fc-black-500.fs-title.c-pointer
+  = human_number @post.votes, display_zero: true
+
+-# downvote button
+%button{ class: "flex--item s-btn s-btn__unset c-pointer #{'fc-theme-primary' if state_hash[:downvoted]}", data: { action: 'click->posts#downvote' } }
+  %svg.svg-icon.iconArrowDownLg{ width: '36', height: '36', viewbox: '0 0 36 36' }
+    %path{ d: 'M2 11h32L18 27 2 11Z' }
+
+-# bookmark button
+%button.s-btn.s-btn__unset.c-pointer.py4{ data: { action: 'click->posts#bookmark' } }
+  %svg{ class: "svg-icon iconBookmarkAlt#{' fc-theme-primary-500' if state_hash[:bookmarked]}", height: '18', viewbox: '0 0 18 18', width: '18' }
+    - if state_hash[:bookmarked]
+      %path{ d: 'M3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z' }
+    - else
+      %path{ d: 'm9 10.6 4 2.66V3H5v10.26l4-2.66ZM3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z' }
+
+- if @post.accepted?
+  -# green checkmark
+  .flex--item.fc-green-700.py6.mtn8
+    .ta-center
+      %svg.svg-icon.iconCheckmarkLg{ height: '36', viewbox: '0 0 36 36', width: '36' }
+        %path{ d: 'm6 14 8 8L30 6v8L14 30l-8-8v-8Z' }
+

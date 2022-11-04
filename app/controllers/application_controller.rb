@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def homepage
     UpdateReputationJob.perform_now
 
-    @questions = Post.includes(:author).only_questions
+    @questions = Post.includes(:author).only_questions.ordered_randomly
     @question_count = @questions.size
   end
 
@@ -35,5 +35,27 @@ class ApplicationController < ActionController::Base
     else
       redirect_to show_post_path(post.question.id, post.question.title_slug)
     end
+  end
+
+  # =====> Hello, Interviewers!
+  #
+  # SO does useful back-end things with upvotes, downvotes, flags, and bookmarks
+  # For my use case, I YAGNI'd almost all of that (but Posts do get vote tallies)
+  # I am recording these state changes in the browser session cookies
+  # So I can indicate all these actions per user without actually making
+  # database calls
+  # This was a great chance to try out Rails 7 Stimulus controllers for the first time
+  def add_session_record(post_id, state_name, klass)
+    session[klass] = {} if session[klass].nil?
+    session[klass][state_name] = [] if session[klass][state_name].nil?
+
+    session[klass][state_name] << post_id
+  end
+
+  def remove_session_record(post_id, state_name, klass)
+    session[klass] = {} if session[klass].nil?
+    session[klass][state_name] = [] if session[klass][state_name].nil?
+
+    session[klass][state_name] -= [post_id]
   end
 end

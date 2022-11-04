@@ -3,6 +3,11 @@
 module Constants
   SYM_REGEX = /[^\w\s]/
 
+  VOTE_CHANGE = {
+    'upvoted' => 1,
+    'downvoted' => -1
+  }.freeze
+
   STOP_WORDS = %w[
     a
     about
@@ -87,4 +92,5 @@ module Constants
 
   public_constant :STOP_WORDS
   public_constant :SYM_REGEX
+  public_constant :VOTE_CHANGE
 end

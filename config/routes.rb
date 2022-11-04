@@ -7,12 +7,23 @@ Rails.application.routes.draw do
   root to: 'application#homepage', as: :homepage
 
   resources :posts, except: %i[show index] do
-    resources :comments
+    resources :comments do
+      member do
+        get 'vote'
+        get 'flag'
+      end
+    end
+
+    member do
+      get 'vote'
+      get 'bookmark'
+    end
   end
 
   ## =====> Hello, Interviewers!
-  # just mimicking what StackOverflow does for urls
-  # maybe it's for SEO?
+  #
+  # Just mimicking what StackOverflow does for urls
+  # It's probably for SEO
   get '/questions/:id(/:title_slug)', to: 'posts#show', as: 'show_post'
 
   get '/search', to: 'posts#search', as: 'search_posts'
