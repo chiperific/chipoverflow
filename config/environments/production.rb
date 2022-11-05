@@ -72,11 +72,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     authentication: :plain,
-    address: 'smtp.mailgun.org',
+    enable_starttls_auto: true,
+    address: 'smtp.sendgrid.net',
     port: 587,
     domain: 'chipoverflow.com',
-    user_name: ENV.fetch('SMTP_USER', nil),
-    password: ENV.fetch('SMTP_PASS', nil)
+    user_name: 'apikey',
+    password: ENV.fetch('SENDGRID_API_KEY', nil)
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -93,7 +94,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)

@@ -5,8 +5,8 @@ class CreateComments < ActiveRecord::Migration[7.0]
     create_table :comments do |t|
       t.belongs_to :author, null: false, foreign_key: true
       t.belongs_to :post, null: false, foreign_key: true
+      t.integer :votes, default: 0, null: false, index: true
       t.text :body
-      t.integer :rank, null: false, index: true
 
       t.timestamps
     end

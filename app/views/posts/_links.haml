@@ -17,5 +17,5 @@
           = link_to 'Delete', '#', title: 'Vote to delete this post'
         .flex--item
           = link_to 'Flag', '#', title: 'Flag this post for serious problems or moderator attention'
-  %div{ class: "post-signature flex--item #{'owner' if is_question}"}
-    = render 'authors/sig_box', { author: post.author, asked_at: human_time(post.created_at, year: true), is_question: is_question }
+  %div{ class: "post-signature flex--item #{'owner' if is_question}" }
+    = render 'authors/sig_box', { author: post.author, asked_at: human_time(post.published_at, year: true), is_question: is_question }

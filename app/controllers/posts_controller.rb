@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post.update_column(:views, @post.views += 1)
+    @post.update(views: @post.views += 1)
 
     @answer_sort_options =
       [

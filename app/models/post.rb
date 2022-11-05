@@ -14,16 +14,22 @@ class Post < ApplicationRecord
 
   has_rich_text :body
 
-  scope :only_questions, -> { where(question_id: nil).order(rank: :asc) }
-  scope :only_answers, -> { where.not(question_id: nil).order(rank: :asc) }
+  scope :only_questions, -> { where(question_id: nil) }
+  scope :only_answers, -> { where.not(question_id: nil) }
   scope :with_body_containing, ->(query) { joins(:rich_text_body).merge(ActionText::RichText.with_body_containing(query)) }
   scope :with_title_containing, ->(query) { where('LOWER(title) ILIKE any ( array[?] )', query.split.map { |v| "%#{v.downcase}%" }) }
   scope :containing, ->(query) { with_body_containing(query).or(with_title_containing(query)) }
   scope :ordered_randomly, -> { order(Arel.sql('RANDOM()')) }
 
+  scope :ordered_by_date, -> { order(published_at: :asc) }
+  scope :ordered_by_rank, -> { order(rank: :desc) }
+
   before_save :create_author, if: -> { author.nil? }
   before_save :set_title_slug, if: -> { will_save_change_to_title? }
-  before_create :set_rank
+  before_create :set_published_at, if: -> { published_at.nil? }
+
+  before_update :add_vote_to_rank, if: -> { will_save_change_to_votes? }
+  before_update :add_view_to_rank, if: -> { will_save_change_to_views? }
 
   after_update :ensure_single_accepted_answer, if: -> { accepted? }
 
@@ -31,9 +37,6 @@ class Post < ApplicationRecord
     body.plain_text_body.gsub("\n", '')
   end
 
-  ## Temp function to generate development data for the seed file
-  # run Post.all.map { |r| p r.for_seed }
-  #
   def for_seed
     {
       id: id,
@@ -44,7 +47,8 @@ class Post < ApplicationRecord
       accepted: accepted,
       views: views,
       votes: votes,
-      rank: rank
+      rank: rank,
+      published_at: published_at.to_s
     }
   end
 
@@ -72,10 +76,6 @@ class Post < ApplicationRecord
 
   def is_question?
     question_id.nil?
-  end
-
-  def modified?
-    created_at.to_i < updated_at.to_i
   end
 
   def siblings
@@ -106,7 +106,21 @@ class Post < ApplicationRecord
     self.title_slug = (ary - Constants::STOP_WORDS).join('-')
   end
 
-  def set_rank
-    self.rank = (Time.now.to_i / 8)
+  def set_published_at
+    # answers shouldn't be published before their question
+    self.published_at =
+      if is_question?
+        Faker::Time.backward(days: 14)
+      else
+        Faker::Time.between(from: question.published_at, to: Time.now)
+      end
+  end
+
+  def add_view_to_rank
+    self.rank += 1
+  end
+
+  def add_vote_to_rank
+    self.rank += votes > votes_was ? 3 : -3
   end
 end

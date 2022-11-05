@@ -11,11 +11,7 @@
     .d-flex.fw-wrap.pb8.mb16.bb.bc-black-075
       .flex--item.ws-nowrap.mr16.mb8
         %span.fc-light.mr2 Asked
-        %time= human_time @post.created_at
-      - if @post.modified?
-        .flex--item.ws-nowrap.mr16.mb8
-          %span.fc-light.mr2 Modified
-          %time= human_time @post.updated_at
+        %time= human_time @post.published_at
       .flex--item.ws-nowrap.mr16.mb8
         %span.fc-light.mr2 Viewed
         %time= pluralize(@post.views, 'time')

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def homepage
     UpdateReputationJob.perform_now
 
-    @questions = Post.includes(:author).only_questions.ordered_randomly
+    @questions = Post.includes(:author).only_questions.ordered_by_rank
     @question_count = @questions.size
   end
 

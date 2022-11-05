@@ -9,13 +9,14 @@ class Comment < ApplicationRecord
   has_rich_text :body
 
   before_create :create_author, if: -> { author_id.nil? }
-  before_create :set_rank
+  before_create :set_published_at, if: -> { published_at.nil? }
 
   def for_seed
     {
       post_id: post_id,
       body: body.to_trix_html,
-      rank: rank
+      votes: votes,
+      published_at: published_at.to_s
     }
   end
 
@@ -25,8 +26,8 @@ class Comment < ApplicationRecord
     self.author = Author.create
   end
 
-  def set_rank
-    # rank is 4 bytes max
-    self.rank = (Time.now.to_i / 8)
+  def set_published_at
+    # comments shouldn't be published before their parent post
+    self.published_at = Faker::Time.between(from: post.published_at, to: Time.now)
   end
 end

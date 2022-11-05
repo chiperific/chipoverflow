@@ -30,10 +30,10 @@ class CommentsController < ApplicationController
     # already upvoted
     if helpers.session_has_record(@comment.id, 'upvoted', 'comments')
       remove_session_record(@comment.id, 'upvoted', 'comments')
-      @comment.update(rank: (@comment.rank / 1.8).to_i)
+      @comment.update(votes: @comment.votes + 1)
     else
       add_session_record(@comment.id, 'upvoted', 'comments')
-      @comment.update(rank: (@comment.rank * 1.8).to_i)
+      @comment.update(votes: @comment.votes - 1)
     end
 
     @comment.reload

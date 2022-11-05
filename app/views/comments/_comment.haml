@@ -35,7 +35,7 @@
         = ' - '
         %a.comment-user{ href: '#' }= comment.author.name
         %span.comment-date
-          %a.comment-link{ href: '#' }= human_time comment.created_at, year: true
+          %a.comment-link{ href: '#' }= human_time comment.published_at, year: true
         %span.comment-edit
           -# TODO: remove before production
           = link_to edit_post_comment_path(@post, comment) do
