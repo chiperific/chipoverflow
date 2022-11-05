@@ -43,11 +43,4 @@ I'm assuming you like to pay some attention to details, but don't want to read e
       - Mutually Human
       - GiveCamp / Code for Good
 
-5. Sign-in modal
-  - `_signin.haml`
-  - w/ contact info
-  - and email form (as if it were a sign-in)
-  - and password form (disabled)
-
-
 3. Breadcrumb md page with links to all repos

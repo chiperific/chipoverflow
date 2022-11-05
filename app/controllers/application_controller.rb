@@ -18,11 +18,8 @@ class ApplicationController < ActionController::Base
   end
 
   def contact
+    # HTML5 validations prevent blank params
     ContactMailer.notify_owner(email_params[:email], email_params[:message]).deliver
-
-    # TODO: pop a flash message or something
-    # currently coming in as a turbo stream
-    # then clear out the form boxes.
 
     head :ok
   end
