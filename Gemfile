@@ -48,6 +48,7 @@ end
 group :development do
   gem 'haml_lint'
   gem 'html2haml'
+  gem 'letter_opener_web'
   gem 'rubocop'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'

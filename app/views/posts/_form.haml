@@ -1,6 +1,6 @@
 -# frozen_string_literal: true
 
-= form_with model: @post, data: {turbo: false} do |form|
+= form_with model: @post, remote: true do |form|
   - if @post&.question_id&.positive?
     .mb32
       %h3= @question.title

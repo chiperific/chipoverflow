@@ -11,7 +11,27 @@ class ApplicationController < ActionController::Base
     @question_count = @questions.size
   end
 
+  def sign_in; end
+
+  def show_phone
+    render 'phone_modal', layout: false
+  end
+
+  def contact
+    ContactMailer.notify_owner(email_params[:email], email_params[:message]).deliver
+
+    # TODO: pop a flash message or something
+    # currently coming in as a turbo stream
+    # then clear out the form boxes.
+
+    head :ok
+  end
+
   private
+
+  def email_params
+    params.permit(:email, :message)
+  end
 
   def set_badges
     UpdateReputationJob.perform_now if Chip.reputation.zero?

@@ -110,11 +110,11 @@ class PostsController < ApplicationController
   end
 
   def search_params
-    params[:q]
+    params.permit(:q)
   end
 
   def question_params
-    params[:question]
+    params.permit(:question)
   end
 
   def set_vote_directions

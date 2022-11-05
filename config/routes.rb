@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: 'application#homepage', as: :homepage
 
+  get '/signin', to: 'application#sign_in', as: :sign_in
+
+  get '/showphone', to: 'application#show_phone', as: :show_phone
+
+  post '/contact', to: 'application#contact', as: :contact
+
   resources :posts, except: %i[show index] do
     resources :comments do
       member do
@@ -29,4 +35,14 @@ Rails.application.routes.draw do
   get '/search', to: 'posts#search', as: 'search_posts'
 
   get '/search/:tag_name', to: 'tags#search', as: 'search_tags'
+
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+
+  # catch-all route
+  # https://github.com/rails/rails/issues/31228
+  get '*path',
+      to: 'application#sign_in',
+      constraints: lambda { |req|
+        req.path.exclude? 'rails/active_storage'
+      }
 end
