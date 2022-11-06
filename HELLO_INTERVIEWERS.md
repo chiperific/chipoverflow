@@ -1,89 +1,98 @@
 # Here's some code I'd like you to see:
 
-### chipoverflow
+## chipoverflow
 
-#### HTML scraping
-Using Net:HTTP and Nokogiri to get data from my SO profile
-https://github.com/chiperific/chipoverflow/tree/main/app/jobs/update_reputation_job.rb#L6
+1. __HTML scraping__
 
-#### Faking identicons from Gravitar
-https://github.com/chiperific/chipoverflow/tree/main/app/models/author.rb#L9
+    Using Net:HTTP and Nokogiri
+    - https://github.com/chiperific/chipoverflow/tree/main/app/jobs/update_reputation_job.rb#L6
 
-#### Metaprogramming butchery
-Classes are proper nouns, class instances aren't
-https://github.com/chiperific/chipoverflow/tree/main/app/models/chip.rb#L3
+2. __Faking identicons from Gravitar__
+    - https://github.com/chiperific/chipoverflow/tree/main/app/models/author.rb#L9
+
+3. __Metaprogramming butchery__
+
+    Because classes are proper nouns and class instances aren't
+    - https://github.com/chiperific/chipoverflow/tree/main/app/models/chip.rb#L3
+
+4. __Stimulus + Turbo = new DOM items on demand__
+    - https://github.com/chiperific/chipoverflow/tree/main/app/views/application/sign_in.haml#L51
+
+5. __Optional URL components in routes__
+    - https://github.com/chiperific/chipoverflow/tree/main/config/routes.rb#L29
+
+6. __Rake extensions on db: tasks__
+
+    `rake db:reset:hard && rake db:reset:complete`
+    - https://github.com/chiperific/chipoverflow/tree/main/lib/tasks/reset_hard.rake#L3
+
+    `rake db:seed:dump`
+    - https://github.com/chiperific/chipoverflow/tree/main/lib/tasks/seed_dump.rake#L3
 
 
-#### Stimulus + Turbo = new DOM items on demand
-https://github.com/chiperific/chipoverflow/tree/main/app/views/application/sign_in.haml#L51
+## filterbuildscheduler
 
-#### Optional URL components in routes
-https://github.com/chiperific/chipoverflow/tree/main/config/routes.rb#L29
+1. __Inventory logic__
 
-#### Rake extensions on db: tasks
-`rake db:reset:hard && rake db:reset:complete`
-https://github.com/chiperific/chipoverflow/tree/main/lib/tasks/reset_hard.rake#L3
+    Extrapolation
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/event_inventory_job.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/extrapolate_inventory_job.rb
 
-`rake db:seed:dump`
-https://github.com/chiperific/chipoverflow/tree/main/lib/tasks/seed_dump.rake#L3
+    Calculation
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/price_calculation_job.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/produceable_job.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/quantity_and_depth_calculation_job.rb
 
+1. __Model flexing__
 
-### filterbuildscheduler
+    Assembly: polymorphic and tree-like
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/assembly.rb
 
-#### Inventory logic
-##### Extrapolation
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/event_inventory_job.rb
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/extrapolate_inventory_job.rb
+    Multi-model searching
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/combinations.js#L6
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/views/assemblies/_new_form.haml
 
-##### Calculation
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/price_calculation_job.rb
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/produceable_job.rb
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/quantity_and_depth_calculation_job.rb
+    Concern: Itemable
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/concerns/itemable.rb
 
-#### Model flexing
-Assembly: polymorphic and tree-like
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/assembly.rb
+1. __Websockets__
 
-Multi-model searching
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/combinations.js#L6
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/views/assemblies/_new_form.haml
+    Multi-user inventory view with auto-updates
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/channels/counts_channel.js
 
-Concern: Itemable
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/concerns/itemable.rb
+1. __Metaprogramming__
 
-#### Websockets
-Multi-user inventory view with auto-updates
-app/assets/javascripts/channels/counts_channel.js
+    `String.objectify_uid`
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/lib/core_ext/string.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/config/routes.rb#L24
 
-#### Metaprogramming
-`String.objectify_uid`
-https://github.com/chiperific/filterbuildscheduler/tree/master/lib/core_ext/string.rb
-https://github.com/chiperific/filterbuildscheduler/tree/master/config/routes.rb#L24
+    Spec Generator
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/lib/generators/spec/spec_generator.rb
 
-Spec Generator
-https://github.com/chiperific/filterbuildscheduler/tree/master/lib/generators/spec/spec_generator.rb
+1. __Stripe payment webhook__
 
-##### Stripe payment webhook
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/controllers/webhooks_controller.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/controllers/webhooks_controller.rb
 
-#### Jobs and Services
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/email.rb
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/email_sync_job.rb
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/gmail_client.rb
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/kindful_client.rb
+1. __Jobs and Services__
 
-#### Minor flexes
-SQL
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/component.rb#L57
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/email.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/email_sync_job.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/gmail_client.rb
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/kindful_client.rb
 
-RailsAdmin customization
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/rails_admin/custom/rails_admin_global.js#L21
+1. __Minor flexes__
 
-Limit JS functions to the view in question
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/application.js#L31
+    SQL
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/component.rb#L57
 
-JS DOM element sizing
-https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/hero.js
+    RailsAdmin customization
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/rails_admin/custom/rails_admin_global.js#L21
+
+    Limit JS functions to the view in question
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/application.js#L31
+
+    JS DOM element sizing
+    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/hero.js
 
 
 ### liters_tracker
