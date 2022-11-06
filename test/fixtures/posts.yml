@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid_question:
+  author: valid
+  title: This is a nice long question title, with some specificity
+  title_slug: this-is-a-nice-long-question
+  body: <div>Hello, from <strong>a fixture</strong></div>
+  votes: 0
+  views: 0
+  accepted: false
+  question_id: nil
+  rank: <%= Time.now.to_i %>
+
+valid_accepted_answer:
+  author: valid
+  title: This is a nice long answer title, with some specificity
+  title_slug: this-is-a-nice-long-answer
+  body: <div>Hello, from <strong>a fixture</strong></div>
+  votes: 0
+  views: 0
+  accepted: true
+  question: valid_question
+  rank: <%= Time.now.to_i %>
+
+valid_answer:
+  author: valid
+  title: This is a nice long answer title, with some specificity
+  title_slug: this-is-a-nice-long-answer
+  body: <div>Hello, from <strong>a fixture</strong></div>
+  votes: 0
+  views: 0
+  accepted: false
+  question: valid_question
+  rank: <%= Time.now.to_i %>
+

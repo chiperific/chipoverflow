@@ -1,0 +1,7 @@
+-# frozen_string_literal: true
+
+- vote_class = session_info_for(@comment.id, 'comments')[:upvoted] ? ' fc-theme-primary-500' : ' fc-black-300 h:fc-theme-primary-500 h:o100 o40'
+
+%button{ class: "s-btn s-btn__unset c-pointer#{vote_class}", title: 'This comment adds something useful to the conversation.', data: { action: 'click->comments#vote' } }
+  %svg.svg-icon.iconArrowUp{ width: '18', height: '18', viewbox: '0 0 18 18' }
+    %path{ d: 'M1 12h16L9 4l-8 8Z' }

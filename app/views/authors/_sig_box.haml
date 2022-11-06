@@ -1,0 +1,25 @@
+-# frozen_string_literal: true
+
+.user-info.user-hover
+  .user-action-time
+    = "#{is_question ? 'asked' : 'answered'}"
+    %span.relativetime= asked_at
+  .user-gravatar32
+    %a{href: 'https://stackoverflow.com/users/1880203', target: '_blank'}
+      .gravatar-wrapper-32
+        %img.bar-sm{src: author.gravatar_url, alt: 'Chiperific\'s user avatar', width: '32', height: '32'}
+  .user-details
+    %a{href: 'https://stackoverflow.com/users/1880203', target: '_blank'}
+      = author.name
+    .-flair
+      %span.reputation-score= author.reputation
+      %span
+        %span.badge1
+        %span.badgecount= author.gold
+      %span
+        %span.badge2
+        %span.badgecount= author.silver
+      %span
+        %span.badge3
+        %span.badgecount= author.bronze
+

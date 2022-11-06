@@ -1,0 +1,6 @@
+= form_with model: [@post, @comment], data: {turbo: false} do |form|
+  .field
+    = form.rich_text_area :body
+  .submit
+    = form.submit
+    = link_to 'Cancel', show_post_path(@post.id, @post.title_slug)

@@ -1,0 +1,56 @@
+-# frozen_string_literal: true
+
+.snippet-hidden
+  .inner-content.clearfix
+    #question-header.d-flex.sm:fd-column
+      %h1.fs-headline1.ow-break-word.mb8.flex--item.fl1
+        = @post.title
+      .ml12.aside-cta.flex--item.sm:ml0.sm:mb12.sm:order-first.sm:as-end
+        -# TODO: remove before production
+        = link_to 'Ask Question', new_post_path, class: 'ws-nowrap s-btn s-btn__primary'
+    .d-flex.fw-wrap.pb8.mb16.bb.bc-black-075
+      .flex--item.ws-nowrap.mr16.mb8
+        %span.fc-light.mr2 Asked
+        %time= human_time @post.published_at
+      .flex--item.ws-nowrap.mr16.mb8
+        %span.fc-light.mr2 Viewed
+        %time= pluralize(@post.views, 'time')
+    #mainbar{ role: 'main' }
+      #question.question
+        .post-layout
+          = render 'votecell', { post: @post }
+          .postcell.post-layout--right
+            .s-prose{ itemprop: 'text' }
+              = @post.body.to_s.html_safe
+            .mt24.mb12
+              .post-taglist.d-flex.gs4.gsy.fd-column
+                .d-flex.ps-relative.fw-wrap
+                  %ul.ml0.list-ls-none.d-inline
+                    = render @post.tags.order(:name)
+            .mb0.mt16
+              = render 'links', { post: @post }
+          .post-layout--right
+            .comments.bt.bc-black-075.mt12
+              %ul.comments-list
+                = render @post.comments
+            %div
+              -# TODO: remove before production?
+              = link_to 'Add a comment', new_post_comment_path(@post), class: 'comments-link', title: 'Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.'
+      #answers
+        #answers-header
+          .answers-subheader.d-flex.ai-center.mb8.gs8
+            .flex--item
+              %h2.mb0= pluralize(@post.answers.size, 'Answer')
+            .flex--item.fl1
+              -# TODO: remove before production
+              = link_to 'Answer', new_post_path(question: @post.id)
+            .flex--item
+              .d-flex.g4.gsx.ai-center.sm:fd-column.sm:ai-start
+                .d-flex.fd-column.ai-end.sm:ai-start
+                  %label.flex--item.fs-caption Sorted by:
+                .flex--item.s-select
+                  = select_tag 'answer-sort-dropdown-select-menu', options_for_select(@answer_sort_options, 'scoredesc')
+        = render partial: 'answer', collection: @post.answers
+
+    #sidebar{ role: 'complementary' }
+      = render 'layouts/right_sidebar'

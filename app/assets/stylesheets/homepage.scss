@@ -1,0 +1,16 @@
+header .logo {
+  display: inline-block;
+  text-indent: -9999em;
+  margin-left: 0;
+  width: 150px;
+  height: 30px;
+  margin-top: -4px;
+  background-image: url('chipoverflow.png');
+  background-position: 0, -5px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#mainbar.no-sidebar {
+  width: calc(100% - var(--su-static24));
+}
