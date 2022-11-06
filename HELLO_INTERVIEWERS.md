@@ -30,6 +30,61 @@ https://github.com/chiperific/chipoverflow/tree/main/lib/tasks/seed_dump.rake#L3
 
 ### filterbuildscheduler
 
+#### Inventory logic
+##### Extrapolation
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/event_inventory_job.rb
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/extrapolate_inventory_job.rb
+
+##### Calculation
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/price_calculation_job.rb
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/produceable_job.rb
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/quantity_and_depth_calculation_job.rb
+
+#### Model flexing
+Assembly: polymorphic and tree-like
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/assembly.rb
+
+Multi-model searching
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/combinations.js#L6
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/views/assemblies/_new_form.haml
+
+Concern: Itemable
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/concerns/itemable.rb
+
+#### Websockets
+Multi-user inventory view with auto-updates
+app/assets/javascripts/channels/counts_channel.js
+
+#### Metaprogramming
+`String.objectify_uid`
+https://github.com/chiperific/filterbuildscheduler/tree/master/lib/core_ext/string.rb
+https://github.com/chiperific/filterbuildscheduler/tree/master/config/routes.rb#L24
+
+Spec Generator
+https://github.com/chiperific/filterbuildscheduler/tree/master/lib/generators/spec/spec_generator.rb
+
+##### Stripe payment webhook
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/controllers/webhooks_controller.rb
+
+#### Jobs and Services
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/email.rb
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/email_sync_job.rb
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/gmail_client.rb
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/kindful_client.rb
+
+#### Minor flexes
+SQL
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/component.rb#L57
+
+RailsAdmin customization
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/rails_admin/custom/rails_admin_global.js#L21
+
+Limit JS functions to the view in question
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/application.js#L31
+
+JS DOM element sizing
+https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/hero.js
+
 
 ### liters_tracker
 
