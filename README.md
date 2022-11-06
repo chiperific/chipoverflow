@@ -20,7 +20,6 @@ I'm assuming you like to pay some attention to details, but don't want to read e
 
 1. Header has TODO links
   - Something creative with inbox
-  - Generalized searchbar
 
 2. Left sidebar
   - attributes `.youarehere{'aria-current' => 'true'}` set dynamically by page

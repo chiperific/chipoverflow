@@ -20,6 +20,14 @@ class Comment < ApplicationRecord
     }
   end
 
+  def randomly_increase_votes!
+    # there shouldn't be more votes on the comment than there are votes on the post
+    upper = [2, post.votes].max
+    self.votes += Random.rand(1..upper)
+
+    save
+  end
+
   private
 
   def create_author

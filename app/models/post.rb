@@ -78,6 +78,23 @@ class Post < ApplicationRecord
     question_id.nil?
   end
 
+  def randomly_increase_votes_and_views!
+    # answers routinely get more votes than questions
+    weight = is_answer? ? 45 : 25
+
+    self.views += Random.rand(1..weight)
+
+    # there shouldn't be more votes than views
+    upper = [2, (views / 2)].max
+    self.votes += Random.rand(1..upper)
+
+    recalculate_rank!
+  end
+
+  def recalculate_rank!
+    update(rank: (votes * 3) + views)
+  end
+
   def siblings
     Post.where(question_id: question_id).where.not(id: id)
   end

@@ -114,7 +114,7 @@ class PostsController < ApplicationController
   end
 
   def question_params
-    params.permit(:question)
+    params.permit(:question)[:question]
   end
 
   def set_vote_directions
