@@ -10,6 +10,8 @@ I added a specific comment to anything I wanted to point out in my public repos.
 
 I'm assuming you like to pay some attention to details, but don't want to read every file, so I added this breadcrumb trail for you.
 
+Check out [HELLO_INTERVIEWERS](https://github.com/chiperific/chipoverflow/tree/main/HELLO_INTERVIEWERS.md)
+
 # TODO
 1. Answer sorting
 
@@ -43,5 +45,3 @@ I'm assuming you like to pay some attention to details, but don't want to read e
       - 20 Liters
       - Mutually Human
       - GiveCamp / Code for Good
-
-3. Breadcrumb md page with links to all repos
