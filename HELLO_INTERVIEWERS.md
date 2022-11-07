@@ -97,7 +97,7 @@
 
 
 
-### liters_tracker
+## liters_tracker
 
 1. __`redirect_back` patching__
 
@@ -123,7 +123,7 @@
 
 
 
-### promisetasks
+## promisetasks
 
 Just an app I'm proud of. It's small, narrow in scope, and does what it says on the tin, or rather, the README
 
