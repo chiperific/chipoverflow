@@ -30,6 +30,7 @@
     - https://github.com/chiperific/chipoverflow/tree/main/lib/tasks/seed_dump.rake#L3
 
 
+
 ## filterbuildscheduler
 
 1. __Inventory logic__
@@ -95,7 +96,35 @@
     - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/hero.js
 
 
+
 ### liters_tracker
+
+1. __`redirect_back` patching__
+
+    Rails' `redirect_back` is embarassingly bad. I try to make it slightly less so.
+    - https://github.com/chiperific/liters_tracker/tree/master/app/controllers/application_controller.rb#L9
+
+1. __`rake` task for database copying from production to development__
+
+    Similar to Thoughbot's Parity, but for Railway
+    - https://github.com/chiperific/liters_tracker/tree/master/lib/tasks/db.rake
+
+1. __Fat model, skinny controller__
+
+    ActiveStorage and Imagemagick processing
+    - https://github.com/chiperific/liters_tracker/tree/master/app/models/story.rb#L44
+
+    Complex method for finding related records with use of session storage
+    - https://github.com/chiperific/liters_tracker/tree/master/app/models/story.rb#L75
+
+1. __Using JSONB to simplify tree-like relationships__
+
+    - https://github.com/chiperific/liters_tracker/tree/master/app/services/hierarchy_reset_service.rb
+
 
 
 ### promisetasks
+
+Just an app I'm proud of. It's small, narrow in scope, and does what it says on the tin, or rather, the README
+
+- https://github.com/chiperific/promistasks/blob/master/README.md
