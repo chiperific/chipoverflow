@@ -1,0 +1,11 @@
+.grid--item.s-card.js-tag-cell.d-flex.fd-column
+  .d-flex.jc-space-between.ai-center.mb12
+    .flex--item
+      = link_to index_tag.name, search_tags_path(tag_name: index_tag.name), class: 'post-tag', title: "show questions tagged '#{index_tag.name}'", rel: 'tag'
+    = link_to 'Edit', '/try_to_edit_me', class: 'flex--item s-link s-link__muted fs-caption', title: 'Edit this tag wiki excerpt'
+  .flex--item.fc-medium.mb12.v-truncate4
+    = index_tag.description
+  .mt-auto.d-flex.jc-space-between.fs-caption.fc-black-400
+    .flex--item= pluralize index_tag.questions.size, 'question'
+    .flex--item.s-anchors.s-anchors__inherit
+      rank: #{index_tag.score}

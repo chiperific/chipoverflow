@@ -1,0 +1,26 @@
+-# frozen_string_literal: true
+
+:ruby
+  tag_class = 'flex--item s-btn s-btn__muted s-btn__outlined'
+  tag_popular_class = "#{tag_class} #{'youarehere is-selected' if @tab_params == 'popular'}"
+  tag_name_class = "#{tag_class} #{'youarehere is-selected' unless @tab_params == 'popular'}"
+
+#mainbar-full
+  %h1.fs-headline1.mb16 Tags
+  %p.fs-body2.wmx6.mb16
+    A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.
+  .d-flex.fw-wrap
+    = form_with url: live_search_tags_path, method: :post, class: 'flex--item ps-relative mb12' do |form|
+      = form.search_field :name_search, autocomplete: 'off', maxlength: '35', placeholder: 'Filter by tag name', type: 'text', oninput: 'this.form.requestSubmit()', class: 's-input s-input__search h100'
+      %svg.s-input-icon.s-input-icon__search.svg-icon.iconSearch{ 'aria-hidden' => 'true', height: '18', viewbox: '0 0 18 18', width: '18' }
+        %path{ d: 'm18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z' }
+    .flex--item.ml-auto.mb12.d-flex.s-btn-group.js-filter-btn
+      %a{ class: tag_popular_class, href: '/tags?tab=popular', title: 'most popular tags' }
+        Popular
+      %a{ class: tag_name_class, href: '/tags?tab=name', title: 'tags in alphabetical order' }
+        Name
+  #tags-list
+    = turbo_frame_tag 'tags-browser', class: 'd-grid grid__4 g12 lg:grid__3 md:grid__2 sm:grid__1' do
+      = render partial: 'index_tag', collection: @tags
+
+

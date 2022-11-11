@@ -26,6 +26,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tags, only: %i[index show] do
+    collection do
+      post :live_search
+    end
+  end
+
   ## =====> Hello, Interviewers!
   #
   # Just mimicking what StackOverflow does for urls

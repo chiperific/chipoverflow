@@ -42,6 +42,7 @@ class ApplicationController < ActionController::Base
   def set_left_sidebar_highlighting
     @highlight_home = action_name == 'homepage'
     @highlight_questions = action_name == 'show' && controller_name == 'posts'
+    @highlight_tags = controller_name == 'tags'
 
     # TODO: fill in with more navigations
   end

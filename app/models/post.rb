@@ -33,6 +33,8 @@ class Post < ApplicationRecord
 
   after_update :ensure_single_accepted_answer, if: -> { accepted? }
 
+  after_save :update_tags_scores
+
   def body_plain_text
     body.plain_text_body.gsub("\n", '')
   end
@@ -139,5 +141,9 @@ class Post < ApplicationRecord
 
   def add_vote_to_rank
     self.rank += votes > votes_was ? 3 : -3
+  end
+
+  def update_tags_scores
+    UpdateTagScoresJob.perform_now
   end
 end

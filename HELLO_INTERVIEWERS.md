@@ -15,7 +15,12 @@
     Because classes are proper nouns and class instances aren't
     - https://github.com/chiperific/chipoverflow/tree/main/app/models/chip.rb#L3
 
-4. __Stimulus + Turbo = new DOM items on demand__
+4. __Stimulus + Turbo = DOM manipluation on demand__
+
+    Realtime search (TurboStreams)
+    - https://github.com/chiperific/chipoverflow/tree/main/app/controllers/tags_controller.rb#L21
+
+    Add a DOM element on click (TurboDrive and Stimulus)
     - https://github.com/chiperific/chipoverflow/tree/main/app/views/application/sign_in.haml#L51
 
 5. __Optional URL components in routes__

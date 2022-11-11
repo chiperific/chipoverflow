@@ -115,6 +115,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_153616) do
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
+    t.text "description"
     t.integer "score", default: 0, null: false
   end
 

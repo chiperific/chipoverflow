@@ -1,6 +1,6 @@
 -# frozen_string_literal: true
 
-#mainbar{role: 'main'}
+#mainbar{ role: 'main' }
   .d-flex.fw-wrap.mb12
     %h1.flex--item.fl1.fs-headline1.mr12.mb12 Questions tagged '#{@tag.name}':
   .filters
@@ -10,18 +10,18 @@
       .uql-nav.flex--item
         .d-flex.ai-center.jc-space-between
           .js-uql-navigation.s-btn-group.flex--item.mr16.ff-row-nowrap
-            %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: '/questions?tab=Newest'}
+            %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: '/questions?tab=Newest' }
               .flex--item Newest
-            %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: '/questions?tab=Active'}
+            %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex{ href: '/questions?tab=Active' }
               .flex--item Active
-            %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex.uql-nav--expanded-item{ href: '/questions?tab=Unanswered'}
+            %a.s-btn.s-btn__muted.s-btn__outlined.s-btn__sm.d-flex.uql-nav--expanded-item{ href: '/questions?tab=Unanswered' }
               .flex--item Unanswered
           .flex--item
-            %button.s-btn.s-btn__filled.s-btn__sm.s-btn__icon.ws-nowrap{role: 'button'}
-              %svg.svg-icon.iconFilter{'aria-hidden' => 'true', height: '18', viewbox: '0 0 18 18', width: '18'}
-                %path{d: 'M2 4h14v2H2V4Zm2 4h10v2H4V8Zm8 4H6v2h6v-2Z'}
+            %button.s-btn.s-btn__filled.s-btn__sm.s-btn__icon.ws-nowrap{ role: 'button' }
+              %svg.svg-icon.iconFilter{ 'aria-hidden' => 'true', height: '18', viewbox: '0 0 18 18', width: '18' }
+                %path{ d: 'M2 4h14v2H2V4Zm2 4h10v2H4V8Zm8 4H6v2h6v-2Z' }
               Filter
   .flush-left#questions
     = render @questions
-#sidebar{role: 'complementary'}
+#sidebar{ role: 'complementary' }
   = render 'layouts/right_sidebar'

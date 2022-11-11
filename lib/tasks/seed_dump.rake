@@ -40,7 +40,14 @@ namespace :db do
             "#{model}.create!([\n"
           )
 
-          model.all.each_with_index do |record, index|
+          ordered_model =
+            if model == PostsTag
+              model.all
+            else
+              model.all.order(id: :asc)
+            end
+
+          ordered_model.each_with_index do |record, index|
             file.write "  #{record.for_seed}"
             file.write ",\n" unless (index + 1) == model_record_size
           end

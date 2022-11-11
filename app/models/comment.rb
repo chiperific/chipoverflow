@@ -11,6 +11,8 @@ class Comment < ApplicationRecord
   before_create :create_author, if: -> { author_id.nil? }
   before_create :set_published_at, if: -> { published_at.nil? }
 
+  after_save :update_tags_scores
+
   def for_seed
     {
       post_id: post_id,
@@ -37,5 +39,9 @@ class Comment < ApplicationRecord
   def set_published_at
     # comments shouldn't be published before their parent post
     self.published_at = Faker::Time.between(from: post.published_at, to: Time.now)
+  end
+
+  def update_tags_scores
+    UpdateTagScoresJob.perform_now
   end
 end
