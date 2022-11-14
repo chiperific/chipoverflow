@@ -13,10 +13,6 @@ I'm assuming you like to pay some attention to details, but don't want to read e
 Check out [HELLO_INTERVIEWERS](https://github.com/chiperific/chipoverflow/tree/main/HELLO_INTERVIEWERS.md)
 
 # TODO
-1. Answer sorting
-
-1. I'm not doing anything with Tag#score
-
 1. Remove Post CUD functions on production
   - replace all "ask a question" or answer links with links to sign_in_path
 

@@ -18,6 +18,7 @@ namespace :db do
       Chipoverflow::Application.eager_load!
 
       tables = [
+        Author,
         Tag,
         Post,
         Comment,

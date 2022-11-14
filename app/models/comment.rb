@@ -18,7 +18,8 @@ class Comment < ApplicationRecord
       post_id: post_id,
       body: body.to_trix_html,
       votes: votes,
-      published_at: published_at.to_s
+      published_at: published_at.to_s,
+      author_id: author_id
     }
   end
 

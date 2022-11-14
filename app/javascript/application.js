@@ -3,3 +3,10 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "trix"
 import "@rails/actiontext"
+
+// global blank link click event preventer
+document.querySelectorAll("a[href='#']").forEach((link) => {
+  link.addEventListener('click', function() {
+    event.preventDefault();
+  });
+});

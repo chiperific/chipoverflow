@@ -41,64 +41,64 @@
 1. __Inventory logic__
 
     Extrapolation
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/event_inventory_job.rb
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/extrapolate_inventory_job.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/jobs/event_inventory_job.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/jobs/extrapolate_inventory_job.rb
 
     Calculation
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/price_calculation_job.rb
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/produceable_job.rb
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/quantity_and_depth_calculation_job.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/jobs/price_calculation_job.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/jobs/produceable_job.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/jobs/quantity_and_depth_calculation_job.rb
 
 1. __Model flexing__
 
     Assembly: polymorphic and tree-like
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/assembly.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/models/assembly.rb
 
     Multi-model searching
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/combinations.js#L6
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/views/assemblies/_new_form.haml
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/combinations.js#L6
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/views/assemblies/_new_form.haml
 
     Concern: Itemable
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/concerns/itemable.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/models/concerns/itemable.rb
 
 1. __Websockets__
 
     Multi-user inventory view with auto-updates
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/channels/counts_channel.js
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/assets/javascripts/channels/counts_channel.js
 
 1. __Metaprogramming__
 
     `String.objectify_uid`
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/lib/core_ext/string.rb
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/config/routes.rb#L24
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/lib/core_ext/string.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/config/routes.rb#L24
 
     Spec Generator
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/lib/generators/spec/spec_generator.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/lib/generators/spec/spec_generator.rb
 
 1. __Stripe payment webhook__
 
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/controllers/webhooks_controller.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/controllers/webhooks_controller.rb
 
 1. __Jobs and Services__
 
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/email.rb
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/jobs/email_sync_job.rb
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/gmail_client.rb
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/services/kindful_client.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/models/email.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/jobs/email_sync_job.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/services/gmail_client.rb
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/services/kindful_client.rb
 
 1. __Minor flexes__
 
     SQL
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/models/component.rb#L57
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/models/component.rb#L57
 
     RailsAdmin customization
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/rails_admin/custom/rails_admin_global.js#L21
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/assets/javascripts/rails_admin/custom/rails_admin_global.js#L21
 
     Limit JS functions to the view in question
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/application.js#L31
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/assets/javascripts/application.js#L31
 
     JS DOM element sizing
-    - https://github.com/chiperific/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/hero.js
+    - https://github.com/20LitersAdmin/filterbuildscheduler/tree/master/app/assets/javascripts/controllers/hero.js
 
 
 
@@ -107,24 +107,24 @@
 1. __`redirect_back` patching__
 
     Rails' `redirect_back` is embarassingly bad. I try to make it slightly less so.
-    - https://github.com/chiperific/liters_tracker/tree/master/app/controllers/application_controller.rb#L9
+    - https://github.com/20LitersAdmin/liters_tracker/tree/master/app/controllers/application_controller.rb#L9
 
 1. __`rake` task for database copying from production to development__
 
     Similar to Thoughbot's Parity, but for Railway
-    - https://github.com/chiperific/liters_tracker/tree/master/lib/tasks/db.rake
+    - https://github.com/20LitersAdmin/liters_tracker/tree/master/lib/tasks/db.rake
 
 1. __Fat model, skinny controller__
 
     ActiveStorage and Imagemagick processing
-    - https://github.com/chiperific/liters_tracker/tree/master/app/models/story.rb#L44
+    - https://github.com/20LitersAdmin/liters_tracker/tree/master/app/models/story.rb#L44
 
     Complex method for finding related records with use of session storage
-    - https://github.com/chiperific/liters_tracker/tree/master/app/models/story.rb#L75
+    - https://github.com/20LitersAdmin/liters_tracker/tree/master/app/models/story.rb#L75
 
 1. __Using JSONB to simplify tree-like relationships__
 
-    - https://github.com/chiperific/liters_tracker/tree/master/app/services/hierarchy_reset_service.rb
+    - https://github.com/20LitersAdmin/liters_tracker/tree/master/app/services/hierarchy_reset_service.rb
 
 
 

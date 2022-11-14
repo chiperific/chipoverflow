@@ -1,0 +1,40 @@
+-# frozen_string_literal: true
+
+#inbox-popover.s-popover.topbar-dialog.inbox-dialog{:role => "menu"}
+  .header.fw-wrap
+    %h3.flex--item Inbox
+  .inbox-notifications
+    .modal-content
+      %ul
+        %li.inbox-item
+          %a.d-flex.gs8.gsx{ href: '/questions/17/Who-vouch-Chip' }
+            .site-icon.flex--item.fd-column
+              .favicon.favicon-chipoverflow.flex--item{:title => "Stack Overflow"}
+            .item-content.flex--item.fl1
+              .item-header
+                %span.item-type.unread-bold
+                  %span.v-visible-sr> Stack Overflow
+                  answer
+                .item-creation
+                  %span
+                    %span.relativetime{:title => "2022-11-14 14:44:13Z"} 3 hours ago
+              .item-location.unread-bold
+                Who can vouch for Chip?
+              .item-summary
+                %i 3 new answers to your question...
+        %li.inbox-item
+          %a.d-flex.gs8.gsx{ href: '/questions/8/Are-there-specific-pieces-code-Chip' }
+            .site-icon.flex--item.fd-column
+              .favicon.favicon-chipoverflow.flex--item{:title => "Stack Overflow"}
+            .item-content.flex--item.fl1
+              .item-header
+                %span.item-type.unread-bold
+                  %span.v-visible-sr> Stack Overflow
+                  answer
+                .item-creation
+                  %span
+                    %span.relativetime{:title => "2022-11-14 09:07:49Z"} 9 hours ago
+              .item-location.unread-bold
+                Are there any specific pieces of code...
+              .item-summary
+                %i One accepted answer to a question you follow

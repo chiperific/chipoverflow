@@ -42,6 +42,7 @@ class Post < ApplicationRecord
   def for_seed
     {
       id: id,
+      author_id: author_id,
       title: title,
       title_slug: title_slug,
       body: body.to_trix_html,

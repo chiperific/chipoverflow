@@ -14,3 +14,15 @@ header .logo {
 #mainbar.no-sidebar {
   width: calc(100% - var(--su-static24));
 }
+
+.favicon-chipoverflow {
+  background-image: url('chipoverflow_glyph.png') !important;
+  background-size: 16px 16px !important;
+}
+
+#inbox-popover.s-popover {
+  padding: 0px;
+  border-radius: 0px;
+  margin-top: -10px !important;
+  max-height: 175px;
+}
