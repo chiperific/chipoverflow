@@ -6,8 +6,7 @@
       %h1.fs-headline1.ow-break-word.mb8.flex--item.fl1
         = @post.title
       .ml12.aside-cta.flex--item.sm:ml0.sm:mb12.sm:order-first.sm:as-end
-        -# TODO: remove before production
-        = link_to 'Ask Question', new_post_path, class: 'ws-nowrap s-btn s-btn__primary'
+        = link_to 'Ask Question', '/signin', class: 'ws-nowrap s-btn s-btn__primary'
     .d-flex.fw-wrap.pb8.mb16.bb.bc-black-075
       .flex--item.ws-nowrap.mr16.mb8
         %span.fc-light.mr2 Asked

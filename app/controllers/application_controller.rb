@@ -7,7 +7,18 @@ class ApplicationController < ActionController::Base
   def homepage
     UpdateReputationJob.perform_now
 
-    @questions = Post.includes(:author).only_questions.ordered_by_rank
+    @questions =
+      case params[:tab]
+      when 'Newest'
+        Post.includes(:author).only_questions.order(published_at: :desc)
+      when 'Active'
+        Post.includes(:author).only_questions.ordered_by_rank
+      when 'Unanswered'
+        Post.includes(:author).only_questions.select { |post| post.has_accepted_answer? == false }
+      else
+        Post.includes(:author).only_questions.ordered_randomly
+      end
+
     @question_count = @questions.size
   end
 
@@ -41,8 +52,9 @@ class ApplicationController < ActionController::Base
 
   def set_left_sidebar_highlighting
     @highlight_home = action_name == 'homepage'
-    @highlight_questions = action_name == 'show' && controller_name == 'posts'
+    @highlight_questions = action_name == 'show' && controller_name == 'posts' && params[:id] != '6'
     @highlight_tags = controller_name == 'tags'
+    @highlight_teams = controller_name == 'posts' && params[:id] == '6'
 
     # TODO: fill in with more navigations
   end

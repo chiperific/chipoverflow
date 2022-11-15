@@ -1,6 +1,6 @@
 -# frozen_string_literal: true
 
-%div{class: "answer #{'accepted-answer' if answer.is_accepted_answer?}"}
+%div{ class: "answer #{'accepted-answer' if answer.is_accepted_answer?}" }
   .post-layout
     = render 'votecell', { post: answer }
     .answercell.post-layout--right

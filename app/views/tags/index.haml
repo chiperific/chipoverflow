@@ -8,7 +8,7 @@
 #mainbar-full
   %h1.fs-headline1.mb16 Tags
   %p.fs-body2.wmx6.mb16
-    A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.
+    Chip stole the concept of Tags from some obscure Q&A site. What's worse is that he even copied over all the tags from his profile on that little-known site. He really only included them here as a way of showing off a TurboStream live search.
   .d-flex.fw-wrap
     = form_with url: live_search_tags_path, method: :post, class: 'flex--item ps-relative mb12' do |form|
       = form.search_field :name_search, autocomplete: 'off', maxlength: '35', placeholder: 'Filter by tag name', type: 'text', oninput: 'this.form.requestSubmit()', class: 's-input s-input__search h100'

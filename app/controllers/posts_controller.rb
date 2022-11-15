@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update vote bookmark]
+  before_action :set_post, only: %i[show edit update]
+  before_action :set_post_from_vote_request, only: %i[vote bookmark]
+
   def new
     @post = Post.new(question_id: question_params)
 
@@ -84,6 +86,8 @@ class PostsController < ApplicationController
 
     @post.reload
 
+    UpdateTagScoresJob.perform_now
+
     render 'vote_buttons', layout: false
   end
 
@@ -122,5 +126,13 @@ class PostsController < ApplicationController
     @opposite = (%w[downvoted upvoted] - [@direction])[0]
 
     @vote_change = Constants::VOTE_CHANGE[@direction]
+  end
+
+  def set_post_from_vote_request
+    # Stimulus doesn't override the params[:id] value
+    # so when on a Question post show page, but upvoting an Answer post,
+    # #set_post returns the Question post by mistake
+    # instead, we use the request.path and find the Answer id from there.
+    @post = Post.find(request.path.gsub(/\D/, '').to_i)
   end
 end

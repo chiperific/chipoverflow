@@ -3,17 +3,11 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {
     id: Number,
-    baseUrl: String,
     url: String
   }
 
-  connect() {
-    this.baseUrlValue = "/posts/" + this.idValue
-  }
-
-
   upvote() {
-    this.urlValue = this.baseUrlValue + "/vote?d=upvoted";
+    this.urlValue = "/posts/" + this.idValue + "/vote?d=upvoted";
 
     fetch(this.urlValue)
       .then(response => response.text())
@@ -21,7 +15,7 @@ export default class extends Controller {
   }
 
   downvote() {
-    this.urlValue = this.baseUrlValue + "/vote?d=downvoted";
+    this.urlValue = "/posts/" + this.idValue + "/vote?d=downvoted";
 
     fetch(this.urlValue)
       .then(response => response.text())
@@ -29,7 +23,7 @@ export default class extends Controller {
   }
 
   bookmark() {
-    this.urlValue = this.baseUrlValue + "/bookmark";
+    this.urlValue = "/posts/" + this.idValue + "/bookmark";
 
     fetch(this.urlValue)
       .then(response => response.text())
