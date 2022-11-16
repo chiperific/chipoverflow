@@ -29,6 +29,8 @@ class Comment < ApplicationRecord
     self.votes += Random.rand(1..upper)
 
     save
+    reload
+    votes
   end
 
   private

@@ -9,7 +9,8 @@ valid_question:
   views: 0
   accepted: false
   question_id: nil
-  rank: <%= Time.now.to_i %>
+  rank: 0
+  published_at: <%= Time.now - 4.days %>
 
 valid_accepted_answer:
   author: valid
@@ -20,7 +21,8 @@ valid_accepted_answer:
   views: 0
   accepted: true
   question: valid_question
-  rank: <%= Time.now.to_i %>
+  rank: 0
+  published_at: <%= Time.now - 4.days %>
 
 valid_answer:
   author: valid
@@ -31,5 +33,6 @@ valid_answer:
   views: 0
   accepted: false
   question: valid_question
-  rank: <%= Time.now.to_i %>
+  rank: 0
+  published_at: <%= Time.now - 4.days %>
 

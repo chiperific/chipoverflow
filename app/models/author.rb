@@ -40,7 +40,7 @@ class Author < ApplicationRecord
   end
 
   # Convenience function for changing the Gravatar image
-  def change_identicon!
+  def change_gravatar!
     self.gravatar_url = "https://www.gravatar.com/avatar/#{Faker::Number.unique.number(digits: 8)}?s=48&d=identicon&r=PG"
 
     save

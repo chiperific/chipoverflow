@@ -5,7 +5,6 @@ class CreateChips < ActiveRecord::Migration[7.0]
     create_table :chips do |t|
       t.string  :name
       t.string  :phone
-      t.string  :address
       t.string  :gravatar_url
       t.integer :so_id, default: 0, null: false
       t.integer :reputation, default: 0, null: false

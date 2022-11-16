@@ -1,13 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# ruby:
-#   name: ruby
-
-# ruby-on-rails:
-#   name: ruby on rails
-
-# jquery:
-#   name: jquery
-
-# html:
-#   name: html
+valid:
+  name: FixtureTag
+  description: The fixture tag can have a description
+  score: 0

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post '/contact', to: 'application#contact', as: :contact
 
-  resources :posts, except: %i[show index] do
+  resources :posts, only: [] do
     resources :comments do
       member do
         get 'vote'
@@ -41,8 +41,6 @@ Rails.application.routes.draw do
   get '/search', to: 'posts#search', as: 'search_posts'
 
   get '/search/:tag_name', to: 'tags#search', as: 'search_tags'
-
-  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   # catch-all route
   # https://github.com/rails/rails/issues/31228

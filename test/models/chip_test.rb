@@ -69,6 +69,11 @@ class ChipTest < ActiveSupport::TestCase
 
   context 'Chip#highlander_clause' do
     context 'when no instances exist' do
+      setup do
+        # skips the before_destroy callback
+        Chip.destroy_all
+      end
+
       should 'allow the instance to be created' do
         assert_equal Chip.all.size, 0
 

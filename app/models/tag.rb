@@ -33,7 +33,7 @@ class Tag < ApplicationRecord
     end
 
     save
-
     reload
+    score
   end
 end

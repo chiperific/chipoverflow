@@ -3,11 +3,27 @@
 require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
-  should belong_to :author
-  should have_many(:comments).dependent(:destroy)
-  should have_many(:answers).class_name('Post').with_foreign_key(:question_id).dependent(:destroy)
-  should belong_to(:question).class_name('Post')
-  should should have_and_belong_to_many(:tags)
+  subject { posts(:valid_question) }
+
+  setup do
+    subject.body = '<div>Hello, from <strong>a fixture</strong></div>'
+  end
+
+  context '#body_plain_text' do
+    should 'return a string representation of the body' do
+      assert_equal String, subject.body_plain_text.class
+    end
+  end
+
+  context '#for_seed' do
+    should 'return a Hash' do
+      assert_equal Hash, subject.for_seed.class
+    end
+
+    should 'contain the important parts of a Post' do
+      assert_equal 11, subject.for_seed.size
+    end
+  end
 
   context '#has_accepted_answer?' do
     context 'when post is an answer' do
@@ -94,6 +110,43 @@ class PostTest < ActiveSupport::TestCase
       should 'return false' do
         assert_equal false, posts(:valid_question).is_answer?
       end
+    end
+  end
+
+  context '#is_question?' do
+    context 'when question_id.present?' do
+      should 'return false' do
+        assert_equal false, posts(:valid_answer).is_question?
+      end
+    end
+
+    context 'when !question_id.present?' do
+      should 'return true' do
+        assert_equal true, posts(:valid_question).is_question?
+      end
+    end
+  end
+
+  context 'randomly_increase_votes_and_views!' do
+    should 'increase votes field' do
+      first_views = subject.views
+      first_votes = subject.votes
+
+      subject.randomly_increase_votes_and_views!
+      subject.reload
+
+      assert_operator first_views, :<, subject.views
+      assert_operator first_votes, :<, subject.votes
+    end
+  end
+
+  context 'recalculate_rank!' do
+    should 'change the value of rank based upon votes and views' do
+      first_rank = subject.rank
+      subject.update_columns(views: 25, votes: 5)
+      subject.reload.recalculate_rank!
+
+      assert_operator first_rank, :<, subject.reload.rank
     end
   end
 

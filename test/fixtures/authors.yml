@@ -3,16 +3,7 @@
 valid:
   name: Test Author
   reputation: 23456
-  identicon_url: https://www.gravatar.com/avatar/1a2b3c4d5e6f7g8h9i10j11k12l13m14?s=48&d=identicon&r=PG
-
-no_name:
-  reputation: 23456
-  identicon_url: https://www.gravatar.com/avatar/1a2b3c4d5e6f7g8h9i10j11k12l13m14?s=48&d=identicon&r=PG
-
-no_reputation:
-  name: Test Author
-  identicon_url: https://www.gravatar.com/avatar/1a2b3c4d5e6f7g8h9i10j11k12l13m14?s=48&d=identicon&r=PG
-
-no_identicon:
-  name: Test Author
-  reputation: 23456
+  gold: 10
+  silver: 20
+  bronze: 30
+  gravatar_url: https://www.gravatar.com/avatar/1a2b3c4d5e6f7g8h9i10j11k12l13m14?s=48&d=identicon&r=PG

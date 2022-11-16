@@ -4,4 +4,3 @@ valid:
   author: valid
   post: valid_question
   body: <div>Hello, from <strong>a fixture</strong></div>
-  rank: <%= Time.now.to_i %>

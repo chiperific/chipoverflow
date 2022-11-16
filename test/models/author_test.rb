@@ -3,18 +3,13 @@
 require 'test_helper'
 
 class AuthorTest < ActiveSupport::TestCase
-  subject { Author.new }
-
-  should have_many :posts
-  should have_many :comments
-  should have_many :questions
-  should have_many :answers
+  subject { authors(:valid) }
 
   context 'initialization' do
     context 'with no details provided' do
       should allow_value(nil).for(:name)
       should allow_value(nil).for(:reputation)
-      should allow_value(nil).for(:identicon_url)
+      should allow_value(nil).for(:gravatar_url)
 
       should 'assign a name' do
         assert subject.name.present?, 'Author name was not present'
@@ -24,8 +19,8 @@ class AuthorTest < ActiveSupport::TestCase
         assert subject.reputation.present?, 'Author reputation was not present'
       end
 
-      should 'assign an identicon_url' do
-        assert subject.identicon_url.present?, 'Author identicon_url was not present'
+      should 'assign an gravatar_url' do
+        assert subject.gravatar_url.present?, 'Author gravatar_url was not present'
       end
     end
 
@@ -38,7 +33,7 @@ class AuthorTest < ActiveSupport::TestCase
         Author.new(
           name: @fixture_author.name,
           reputation: @fixture_author.reputation,
-          identicon_url: @fixture_author.identicon_url
+          gravatar_url: @fixture_author.gravatar_url
         )
       end
 
@@ -50,9 +45,45 @@ class AuthorTest < ActiveSupport::TestCase
         assert_equal @fixture_author.reputation, subject.reputation, 'Author reputation did not match fixture reputation value'
       end
 
-      should 'assign the given identicon_url' do
-        assert_equal @fixture_author.identicon_url, subject.identicon_url, 'Author identicon_url did not match fixture identicon_url value'
+      should 'assign the given gravatar_url' do
+        assert_equal @fixture_author.gravatar_url, subject.gravatar_url, 'Author gravatar_url did not match fixture gravatar_url value'
       end
+    end
+  end
+
+  context '#for_seed' do
+    should 'be a hash' do
+      assert_equal Hash, subject.for_seed.class
+    end
+
+    should 'have 7 items' do
+      assert_equal 7, subject.for_seed.size
+    end
+  end
+
+  context '#change_gravatar!' do
+    should 'change the gravatar URL field' do
+      assert_not_equal subject.gravatar_url, subject.change_gravatar!
+    end
+  end
+
+  context '#change_reputation!' do
+    should 'change the reputation field' do
+      assert_not_equal subject.reputation, subject.change_reputation!
+    end
+  end
+
+  context '#set_badges' do
+    should 'change the badges fields' do
+      first_gold = subject.gold
+      first_silver = subject.silver
+      first_bronze = subject.bronze
+
+      subject.set_badges
+
+      assert_not_equal first_gold, subject.gold
+      assert_not_equal first_silver, subject.silver
+      assert_not_equal first_bronze, subject.bronze
     end
   end
 end

@@ -34,7 +34,9 @@ class Post < ApplicationRecord
   after_update :ensure_single_accepted_answer, if: -> { accepted? }
 
   def body_plain_text
-    body.plain_text_body.gsub("\n", '')
+    return '' if body.plain_text_body.nil?
+
+    body.plain_text_body&.gsub("\n", '')
   end
 
   def for_seed
