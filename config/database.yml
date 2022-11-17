@@ -15,3 +15,4 @@ test:
 production:
   <<: *default
   database: chipoverflow_prod
+  url: <%= ENV['DATABASE_URL'] %>
