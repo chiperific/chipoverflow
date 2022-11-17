@@ -5,10 +5,6 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
   subject { posts(:valid_question) }
 
-  setup do
-    subject.body = '<div>Hello, from <strong>a fixture</strong></div>'
-  end
-
   context '#body_plain_text' do
     should 'return a string representation of the body' do
       assert_equal String, subject.body_plain_text.class

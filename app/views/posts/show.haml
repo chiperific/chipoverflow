@@ -33,8 +33,7 @@
               %ul.comments-list
                 = render @post.comments
             %div
-              -# TODO: remove before production?
-              = link_to 'Add a comment', new_post_comment_path(@post), class: 'comments-link', title: 'Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.'
+              = link_to 'Add a comment', '/signin', class: 'comments-link', title: 'Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.'
       #answers
         #answers-header
           .answers-subheader.d-flex.ai-center.mb8.gs8
@@ -42,7 +41,7 @@
               %h2.mb0= pluralize(@post.answers.size, 'Answer')
             .flex--item.fl1
               -# TODO: remove before production
-              = link_to 'Answer', new_post_path(question: @post.id)
+              = link_to 'Answer', '/signin'
             .flex--item
               .d-flex.g4.gsx.ai-center.sm:fd-column.sm:ai-start
                 .d-flex.fd-column.ai-end.sm:ai-start

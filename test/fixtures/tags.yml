@@ -4,3 +4,13 @@ valid:
   name: FixtureTag
   description: The fixture tag can have a description
   score: 0
+
+search:
+  name: FixtureSearchTag
+  description: The fixture search tag
+  score: 0
+
+unfound:
+  name: FixtureUnfoundTag
+  description: Shouldn't be found by search
+  score: 0

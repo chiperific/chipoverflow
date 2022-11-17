@@ -6,7 +6,7 @@
   .d-flex.jc-center.fd-column.ai-stretch.gs4.fc-black-200{ 'data-controller': 'posts', 'data-posts-id-value': post.id }
 
     -# upvote button
-    %button{ class: "flex--item s-btn s-btn__unset c-pointer#{' fc-theme-primary' if state_hash[:upvoted]}", data: { action: 'click->posts#upvote' } }
+    %button{ id: "upvote-#{post.id} ", class: "upvote flex--item s-btn s-btn__unset c-pointer#{' fc-theme-primary' if state_hash[:upvoted]}", data: { action: 'click->posts#upvote' } }
       %svg.svg-icon.iconArrowUpLg{ width: '36', height: '36', viewbox: '0 0 36 36' }
         %path{ d: 'M2 25h32L18 9 2 25Z' }
 
@@ -14,12 +14,12 @@
       = human_number post.votes, display_zero: true
 
     -# downvote button
-    %button{ class: "flex--item s-btn s-btn__unset c-pointer#{' fc-theme-primary' if state_hash[:downvoted]}", data: { action: 'click->posts#downvote' } }
+    %button{ id: "downvote-#{post.id} ", class: "downvote flex--item s-btn s-btn__unset c-pointer#{' fc-theme-primary' if state_hash[:downvoted]}", data: { action: 'click->posts#downvote' } }
       %svg.svg-icon.iconArrowDownLg{ width: '36', height: '36', viewbox: '0 0 36 36' }
         %path{ d: 'M2 11h32L18 27 2 11Z' }
 
     -# bookmark button
-    %button.s-btn.s-btn__unset.c-pointer.py4{ data: { action: 'click->posts#bookmark' } }
+    %button.bookmark.s-btn.s-btn__unset.c-pointer.py4{ id: "bookmark-#{post.id}", data: { action: 'click->posts#bookmark' } }
       %svg{ class: "svg-icon iconBookmarkAlt#{' fc-theme-primary-500' if state_hash[:bookmarked]}", height: '18', viewbox: '0 0 18 18', width: '18' }
         - if state_hash[:bookmarked]
           %path{ d: 'M3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z' }

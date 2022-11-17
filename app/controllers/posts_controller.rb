@@ -50,11 +50,22 @@ class PostsController < ApplicationController
   def search
     redirect_to homepage_path if search_params.nil? || search_params.empty?
 
-    @q = search_params
+    q = search_params[:q]
 
-    @posts_searched = Post.containing(@q)
+    @posts_searched = Post.containing(q)
 
-    @posts = @posts_searched.any? ? @posts_searched : Post.all
+    @posts =
+      if @posts_searched.any?
+        question_ids = @posts_searched.only_questions.pluck(:id)
+
+        @posts_searched.only_answers.each do |answer|
+          question_ids << answer.question_id
+        end
+
+        Post.find(question_ids)
+      else
+        Post.only_questions
+      end
   end
 
   def vote

@@ -4,7 +4,6 @@ valid_question:
   author: valid
   title: This is a nice long question title, with some specificity
   title_slug: this-is-a-nice-long-question
-  body: <div>Hello, from <strong>a fixture</strong></div>
   votes: 0
   views: 0
   accepted: false
@@ -16,7 +15,6 @@ valid_accepted_answer:
   author: valid
   title: This is a nice long answer title, with some specificity
   title_slug: this-is-a-nice-long-answer
-  body: <div>Hello, from <strong>a fixture</strong></div>
   votes: 0
   views: 0
   accepted: true
@@ -28,7 +26,6 @@ valid_answer:
   author: valid
   title: This is a nice long answer title, with some specificity
   title_slug: this-is-a-nice-long-answer
-  body: <div>Hello, from <strong>a fixture</strong></div>
   votes: 0
   views: 0
   accepted: false
@@ -36,3 +33,14 @@ valid_answer:
   rank: 0
   published_at: <%= Time.now - 4.days %>
 
+
+question_two:
+  author: valid
+  title: This is also a question
+  title_slug: this-is-also-a-question
+  votes: 0
+  views: 0
+  accepted: false
+  question_id: nil
+  rank: 0
+  published_at: <%= Time.now - 4.days %>

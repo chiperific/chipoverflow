@@ -19,3 +19,6 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+# save_and_open_page calls save an HTML file that should be .gitignored
+Capybara.save_path = '/tmp/capybara'

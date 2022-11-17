@@ -1,4 +1,24 @@
-# one:
-#   record: name_of_fixture (ClassOfFixture)
-#   name: content
-#   body: <p>In a <i>million</i> stars!</p>
+question:
+  record: valid_question (Post)
+  name: body
+  body: <p>Hello, from <strong>a fixture</strong></p>
+
+question_two:
+  record: question_two (Post)
+  name: body
+  body: <p>Hello, from <strong>a fixture</strong></p>
+
+answer:
+  record: valid_answer (Post)
+  name: body
+  body: <p>Hello, from <strong>a fixture</strong></p>
+
+accepted_answer:
+  record: valid_accepted_answer (Post)
+  name: body
+  body: <p>Hello, from <strong>a fixture</strong></p>
+
+comment:
+  record: valid (Comment)
+  name: body
+  body: <div>Hello, from <strong>a fixture</strong></div>

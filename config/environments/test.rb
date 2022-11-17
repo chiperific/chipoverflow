@@ -14,6 +14,7 @@ Rails.application.configure do
   config.cache_classes = false
   config.action_view.cache_template_loading = true
   config.use_transactional_tests = true
+  config.use_transactional_fixtures = true
 
   # Eager loading loads your whole application. When running a single test locally,
   # this probably isn't necessary. It's a good idea to do in a continuous integration
