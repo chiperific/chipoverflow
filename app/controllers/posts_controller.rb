@@ -1,38 +1,37 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: :show
+  before_action :set_post, only: %i[show edit update]
   before_action :set_post_from_vote_request, only: %i[vote bookmark]
 
-  # TODO: remove on production
-  # def new
-  #   @post = Post.new(question_id: question_params)
+  def new
+    @post = Post.new(question_id: question_params)
 
-  #   @question = Post.find(question_params) if question_params.present?
-  # end
+    @question = Post.find(question_params) if question_params.present?
+  end
 
-  # def create
-  #   @post = Post.new(post_params)
+  def create
+    @post = Post.new(post_params)
 
-  #   if @post.save
-  #     @post.reload
-  #     redirect_to_question(@post)
-  #   else
-  #     render :new
-  #   end
-  # end
+    if @post.save
+      @post.reload
+      redirect_to_question(@post)
+    else
+      render :new
+    end
+  end
 
-  # def edit
-  #   @question = @post.question if @post.is_answer?
-  # end
+  def edit
+    @question = @post.question if @post.is_answer?
+  end
 
-  # def update
-  #   if @post.update(post_params)
-  #     redirect_to_question(@post)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    if @post.update(post_params)
+      redirect_to_question(@post)
+    else
+      render :edit
+    end
+  end
 
   def show
     @post.update(views: @post.views += 1)

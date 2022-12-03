@@ -1,16 +1,16 @@
 -# frozen_string_literal: true
 
 - is_question = post.is_question?
+- edit_path = Rails.env.development? ? edit_post_path(post) : '/signin'
 
 .d-flex.gs8.gsy.fw-wrap.jc-end.ai-start.pt4.mb16
   .flex--item.mr16.fl1.w96
     .js-post-menu.pt2
       .d-flex.gs8.s-anchors.s-anchors__muted.fw-wrap
         .flex--item
-          = link_to 'Share', '#', title: 'Short permalink to this question', rel: 'nofollow'
+          = link_to 'Share', '#', title: 'Short permalink to this question'
         .flex--item
-          -# TODO: remove before production
-          = link_to 'Edit', '/signin', title: 'Revise and improve this post'
+          = link_to 'Edit', edit_path, title: 'Revise and improve this post'
         .flex--item
           = link_to 'Close', '#', title: 'Vote to close this question (when closed, no new answers can be added)'
         .flex--item

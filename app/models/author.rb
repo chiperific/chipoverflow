@@ -27,6 +27,18 @@ class Author < ApplicationRecord
     set_badges
   end
 
+  def self.change_all_reputations!
+    # In order to get actual randomness, I have to loop, no #update_all here
+    Author.all.each do |author|
+      author.update_columns(
+        reputation: Faker::Number.unique.between(from: 0, to: 999),
+        gold: Faker::Number.between(from: 0, to: 5),
+        silver: Faker::Number.between(from: 0, to: 18),
+        bronze: Faker::Number.between(from: 0, to: 50)
+      )
+    end
+  end
+
   def for_seed
     {
       id: id,

@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root to: 'application#homepage', as: :homepage
 
   get '/signin', to: 'application#sign_in', as: :sign_in
@@ -12,17 +9,33 @@ Rails.application.routes.draw do
 
   post '/contact', to: 'application#contact', as: :contact
 
-  resources :posts, only: [] do
-    resources :comments do
+  if Rails.env.development?
+    resources :posts do
+      resources :comments do
+        member do
+          get 'vote'
+          get 'flag'
+        end
+      end
+
       member do
         get 'vote'
-        get 'flag'
+        get 'bookmark'
       end
     end
+  else
+    resources :posts, only: [] do
+      resources :comments do
+        member do
+          get 'vote'
+          get 'flag'
+        end
+      end
 
-    member do
-      get 'vote'
-      get 'bookmark'
+      member do
+        get 'vote'
+        get 'bookmark'
+      end
     end
   end
 
