@@ -56,7 +56,7 @@ Rails.application.configure do
     port: 587,
     domain: 'chipoverflow.com',
     user_name: 'apikey',
-    password: Rails.application.credentials.send_grid&.api_key
+    password: Rails.application.credentials.dig(:send_grid, :api_key)
   }
 
   # Print deprecation notices to the Rails logger.
