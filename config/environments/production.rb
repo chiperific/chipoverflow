@@ -82,7 +82,7 @@ Rails.application.configure do
     password: ENV.fetch('SENDGRID_API_KEY', nil)
   }
 
-  ['chipoverflow.up.railway.app', 'chipoverflow.com'].each do |domain|
+  %w[chipoverflow.up.railway.app www.chipoverflow.com chipoverflow.com *.chipoverflow.com].each do |domain|
     config.hosts << domain
   end
 
