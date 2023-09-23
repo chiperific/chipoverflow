@@ -24,7 +24,7 @@
     - https://github.com/chiperific/chipoverflow/blob/main/app/views/application/sign_in.haml#L51
 
 5. __Optional URL components in routes__
-    - https://github.com/chiperific/chipoverflow/blob/main/config/routes.rb#L29
+    - https://github.com/chiperific/chipoverflow/blob/main/config/routes.rb#L48
 
 6. __Rake extensions on db: tasks__
 
