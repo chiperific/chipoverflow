@@ -46,7 +46,7 @@ class Chip < ApplicationRecord
   end
 
   def self.resume
-    ActionController::Base.helpers.image_url('Chip_Kragt_Resume.pdf')
+    '/Chip_Kragt_Resume.pdf'
   end
 
   validate :highlander_clause, if: :new_record?
