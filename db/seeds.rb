@@ -25,7 +25,7 @@ Author.create!(
     { id: 21, name: 'Elda McLaughlin DC', reputation: 416, gold: 2, silver: 1, bronze: 8, gravatar_url: 'https://www.gravatar.com/avatar/90133171?s=48&d=identicon&r=PG' },
     { id: 22, name: 'Oren Graham', reputation: 248, gold: 1, silver: 3, bronze: 13, gravatar_url: 'https://www.gravatar.com/avatar/77619091?s=48&d=identicon&r=PG' },
     { id: 24, name: 'Ross Hunter', reputation: 231, gold: 5, silver: 13, bronze: 2, gravatar_url: 'https://avatars.githubusercontent.com/u/243033?v=4' },
-    { id: 25, name: 'Erin Van Maanen', reputation: 432, gold: 3, silver: 2, bronze: 38, gravatar_url: 'https://media.licdn.com/dms/image/C5603AQGl02w6a_5NDQ/profile-displayphoto-shrink_400_400/0/1592331912803?e=1698278400&v=beta&t=5eZPOlhreZRce63eW65i7p4314VOAb6iZvpMrf9U_vo' },
+    { id: 25, name: 'Erin Van Maanen', reputation: 432, gold: 3, silver: 2, bronze: 38, gravatar_url: "#{ActionController::Base.helpers.image_url("ev.jpeg")}" },
     { id: 26, name: 'Amanda Mulder', reputation: 716, gold: 4, silver: 8, bronze: 31, gravatar_url: 'https://twentyliters.wpenginepowered.com/wp-content/uploads/2020/02/Amanda-scaled-e1581690349369.jpg' },
     { id: 27, name: 'Conrad Price', reputation: 652, gold: 3, silver: 4, bronze: 39, gravatar_url: 'https://www.gravatar.com/avatar/74040183?s=48&d=identicon&r=PG' },
     { id: 28, name: 'Dr. Ronald Feil', reputation: 991, gold: 5, silver: 11, bronze: 15, gravatar_url: 'https://www.gravatar.com/avatar/99505885?s=48&d=identicon&r=PG' },
