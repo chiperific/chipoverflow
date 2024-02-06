@@ -26,7 +26,7 @@ class UpdateReputationJob < ApplicationJob
     parsed_page = Nokogiri::HTML.parse(page)
 
     badge_titles = parsed_page.css('.flex--item .fs-caption')
-    badge_counts = parsed_page.css('.fs-title.fw-bold.fc-black-800')
+    badge_counts = parsed_page.css('.fs-title.fw-bold.fc-black-600')
 
     update_hsh = {}
 
