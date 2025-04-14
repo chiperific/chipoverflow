@@ -20,7 +20,7 @@
 
     -# bookmark button
     %button.bookmark.s-btn.s-btn__unset.c-pointer.py4{ id: "bookmark-#{post.id}", data: { action: 'click->posts#bookmark' } }
-      %svg{ class: "svg-icon iconBookmarkAlt#{' fc-theme-primary-500' if state_hash[:bookmarked]}", height: '18', viewbox: '0 0 18 18', width: '18' }
+      %svg{ class: "svg-icon iconBookmarkAlt#{' fc-theme-primary-400' if state_hash[:bookmarked]}", height: '18', viewbox: '0 0 18 18', width: '18' }
         - if state_hash[:bookmarked]
           %path{ d: 'M3 17V3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z' }
         - else
@@ -28,7 +28,7 @@
 
     - if post.accepted?
       -# green checkmark
-      .flex--item.fc-green-700.py6.mtn8
+      .flex--item.fc-green-400.py6.mtn8
         .ta-center
           %svg.svg-icon.iconCheckmarkLg{ height: '36', viewbox: '0 0 36 36', width: '36' }
             %path{ d: 'm6 14 8 8L30 6v8L14 30l-8-8v-8Z' }
