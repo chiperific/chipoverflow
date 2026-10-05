@@ -1,0 +1,25 @@
+---
+question:
+  id: 2
+  title: What does Chip know about client-side, front end stuff?
+  title_slug: What-Chip-know-clientside-front-end
+  accepted: false
+  views: 86
+  votes: 41
+  rank: 107
+  published_at: 2024-10-30 04:18:49 UTC
+  author: melissa-satterfield-iii
+  body: |-
+    <div>A good website requires visual appeal, intuitive interactions, and a reliably positive user experience.<br><br>How does Chip rate his own front-end abilities?</div>
+  tags: []
+answers:
+- id: 12
+  accepted: true
+  views: 44
+  votes: 27
+  rank: 76
+  published_at: 2024-10-30 09:19:11 UTC
+  author: sen-patrica-grimes
+  body: |-
+    <div>&nbsp;As a solo developer most of his career, Chip had to interact with the whole stack. It's great that Ruby on Rails just handles the server and data flow <a href="https://www.techopedia.com/definition/14261/automagically">automagically</a>, but if the site looks terrible and is difficult to navigate even the developer won't want to use it.&nbsp;<br>&nbsp;<br> In the early days of Rails 3, Chip tasked himself with writing most of his own CSS so as to better understand the concepts.&nbsp;<br> Rails (and Ruby even more so) seemed like it could be very mysterious "under the hood" and Chip wanted to take a different approach with CSS: learn the hard way instead of relying on magic methods.&nbsp;<br>&nbsp;<br>Chip doesn't always choose to learn via the lower-level instead of the higher, more abstracted path. Some abstractions help by removing pain; some only delay pain by reinforcing a sense that you can't know what's really happening because it's too complicated.:&nbsp;</div><ul><li>&nbsp;He got comfortable with jQuery before tackling Javascript&nbsp;</li><li>&nbsp;He used CoffeeScript for much longer than he probably should have&nbsp;</li><li>&nbsp;He discovered Haml and hasn't looked back (or at least raw HTML if he can avoid it)&nbsp;</li></ul><div><br>&nbsp;These experiences taught him when to utilize abstraction layers and when to roll up your sleeves.&nbsp;<br><br>&nbsp;Chip has used a lot of tools for front-end work, now he mostly works in React and Typescript, though not by choice. If it were up to him, he'd still be using ERB or HAML with a full-stack Rails setup and either custom CSS or a library like Tailwind. He's also done a bit of Turbo and Hotwire as it's come along.</div><div><br>As many can attest, however, knowing <strong>how</strong> to do art is <strong><em>not&nbsp;</em></strong>the same as <strong>being</strong> an artist. Chip is more akin to Randal Monroe than Bob Ross. Somebody else should probably tell him where to put the happy little trees.&nbsp;</div>
+  tags: []

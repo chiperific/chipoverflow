@@ -1,0 +1,31 @@
+---
+question:
+  id: 8
+  title: Has Chip ever contributed to the software community either online or locally?
+  title_slug: Has-Chip-ever-contributed-the-software-community
+  accepted: false
+  views: 36
+  votes: 8
+  rank: 21
+  published_at: 2024-10-22 14:48:10 UTC
+  author: dr-quinn-stamm
+  body: |-
+    <div>Because community matters, even in the for-profit sector.</div>
+  tags:
+  - ajax
+  - database-design
+  - database-schema
+  - google-api
+  - postgresql
+  - redis
+answers:
+- id: 18
+  accepted: true
+  views: 19
+  votes: 15
+  rank: 0
+  published_at: 2024-11-03 14:12:44 UTC
+  author: claudia-pagac-ii
+  body: |-
+    <div>Chip feels genuinely lucky that Give Camp / Code for Good has helped Chip launch new apps on four separate occasions. Chip also feels deeply indebted to the software community, <em>and Mutually Human specifically</em>, for introducing him to this hobby that he loves and hopes to turn into a career.<br><br></div><h1>Locally:</h1><div>Chip was <strong>co-president of GR Give Camp</strong> for two years, alongside <a href="https://www.linkedin.com/in/jansonhartliep/">Janson Hartliep</a> if name-dropping is allowed.<br><br><a href="https://www.jtower.com/">J Tower</a> allowed Chip to speak at <strong>Beer City Code</strong> once, where he hosted a talk focused on how so much of the technology we are making has so many unintended consequences and we really don't seem to be very good at anticipating any of them. One person said "well that was depressing" on their way out afterwards. Which was mission accomplished in Chip's book. It was called "The Machines Have Already Begun to Kill Us".<br><br></div><h1>Online:</h1><div>&nbsp;Since Chip spends so much time scouring Stack Overflow for his own reasons that he likes to reserve a day or two every month to obsessively try and answer a ton of questions, mostly focusing on new users with poorly worded posts.<br><br>Chip has a bleeding heart for the new user and new programmer just reaching out in frustration for anyone to offer any assistance. When it comes to software, we are always novices in the next language, the next pattern, the next practice.<br><br>Chip also writes on <a href="https://medium.com/@chiperific"><strong>Medium</strong></a> when he feels that he solved something that he couldn't find the answer to on Stack Overflow.<br><br>Chip believes in the power and opportunity that open-source software provides and is committed to contributing when he can offer something of value.<br>He has contributed to <a href="https://github.com/AlchemyCMS/alchemy_cms/pull/2403">AlchemyCMS</a>, re-wrote an <a href="https://github.com/chiperific/bloomerang_api">API for Bloomerang</a>, and helped update <a href="https://github.com/traels-it/simplecov_badger/issues/4">simplecov_badger</a>.<br><br>Not to brag, but, Chip is a contributor to Ruby on Rails. Once&nbsp;<a href="https://contributors.rubyonrails.org/contributors/chip/commits">successfully</a>, once <a href="https://github.com/rails/rails/pull/56560">not so much</a>. <br><br>Probably least notably, In 2013, Chip submitted his first PR to an obscure little gem called <a href="https://github.com/asanghi/fiscali">fiscali</a>.</div>
+  tags: []

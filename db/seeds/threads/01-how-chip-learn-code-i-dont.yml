@@ -1,0 +1,143 @@
+---
+question:
+  id: 1
+  title: How did Chip learn to code? I don't see a CS degree on his resume.
+  title_slug: How-Chip-learn-code-I-dont
+  accepted: false
+  views: 170
+  votes: 84
+  rank: 422
+  published_at: 2024-10-31 20:07:50 UTC
+  author: debrah-vandervort
+  body: |-
+    <div>How can one learn about Computer Science if one does not attend an accredited university and study such a thing?</div>
+  tags:
+  - association
+  - config
+  - database-design
+  - database-schema
+  - javascript
+  - ruby
+  comments:
+  - votes: 51
+    published_at: 2024-11-03 00:02:55 UTC
+    author: miss-joline-west
+    body: |-
+      <div>Don't forget about bootcamps!</div>
+  - votes: 41
+    published_at: 2024-11-04 01:11:10 UTC
+    author: earle-wuckert
+    body: |-
+      <div>I have found that a Google Certificate doesn't <i>actually</i> help me get interviews. :(</div>
+  - votes: 5
+    published_at: 2024-11-01 09:28:24 UTC
+    author: hiedi-mohr
+    body: |-
+      <div>I'd like to see this novice explain big O notation! Ha!</div>
+  - votes: 11
+    published_at: 2024-11-05 15:27:15 UTC
+    author: elda-mclaughlin-dc
+    body: |-
+      <div>Hey, CO is not the place for this kind of critical language. Nobody really understands Big O notation.</div>
+answers:
+- id: 11
+  accepted: true
+  views: 5
+  votes: 28
+  rank: 86
+  published_at: 2024-11-04 01:46:01 UTC
+  author: rep-aldo-hayes
+  body: |-
+    <div>
+    <strong>
+    By the numbers:
+    <br>
+    </strong>
+    <br>
+    </div>
+    <ul>
+    <li>
+    2009: Chip got good a Microsoft Access and VBA while working for the Red
+    Cross
+    </li>
+    <li>
+    2010: Chip learned MySQL and PHP to deploy WAMP stacks to get his databases
+    into an online format
+    </li>
+    <li>
+    2011: Mark from Mutually Human introduced Chip to Ruby on Rails at the first
+    Grand Rapids GiveCamp (now Code for Good)
+    </li>
+    <li>
+    2012: Chip cut his teeth on an inventory app for the Red Cross (with help
+    from GiveCamp)
+    </li>
+    <li>
+    2015: Chip launched his first solo web app: a time management and tracking
+    site for grant-based work for the Refugee Education Center
+    </li>
+    <li>
+    2017: Code for Good helped Chip spin up an event registration app for 20
+    Liters (filterbuildscheduler), Chip finished it up and deployed it in less
+    than 3 months
+    </li>
+    <li>
+    2017: Chip wrote his first API to take a JSON payload from a Stripe Webhook
+    and use it to create a donation record in 20 Liters' donor CRM via their API
+    </li>
+    <li>
+    2018: Chip added a complex inventory module to filterbuildscheduler that
+    used event results to automatically update inventory counts
+    </li>
+    <li>
+    2019: Chip again worked with Code for Good to deploy a program reporting and
+    micro-blogging application for 20 Liters (LitersTracker)
+    </li>
+    <li>
+    2019: Chip wrote a project management app for Family Promise of West
+    Michigan that included API integration with Google Tasks and Calendar
+    </li>
+    <li>
+    2020: Chip turned his fully-fledged project management app for Family
+    Promise into a simplified app that integrated with and extended the
+    functionality of Google Tasks, because sometimes simple is better.
+    </li>
+    <li>
+    2021: Chip built a Gmail API service into filterbuildscheduler so that
+    emails between 20 Liters staff and donors are recorded in their donor CRM
+    </li>
+    <li>
+    2023: Chip accepted the position of Backend Software Engineer for a greenfield project in Grand Rapids, MI and has been working on it ever since.
+    </li>
+    </ul>
+    <br>
+    <div>
+    <strong>From the earliest days:</strong>
+    <br>
+    In High School math classes, Chip learned he could program algebraic equations into his TI-86 calculator. Equations he was supposed to memorize for tests.
+    <br>
+    <br>
+    While at the American Red Cross, Chip's Microsoft Office skills progressed from basic Excel usage to complex Excel functions to VBA for Excel to MS Access.
+    <br>
+    Getting those Access programs onto the internet led to Chip installing WAMP and LAMP stacks, and assigning network ports. It also meant he had to learn PHP and MySQL.
+    <br>
+    <br>
+    Chip was fascinated by what was possible, but frankly, disliked almost everything he was working with. When writing SQL queries is the best part, something is wrong.
+    <br>
+    <br>
+    Then, in 2011, one of Chip's colleagues heard about the first-ever Grand Rapids GiveCamp event and asked if Chip had any project ideas. That first weekend-long coding session was a life-changer for Chip. Not only was the Mutually Human team really fun to be around, but they actually let Chip help by doing QA testing. A few members of the team, especially Mark Van Holstyn, encouraged Chip that he could learn Ruby on Rails and pointed him to a lot of great resources and tutorials.
+    <br>
+    <br>
+    For a while, Chip would code in the evenings and on weekends, stumbling through new concepts and technologies, getting really good at Rails and not too bad at Ruby. He'd write apps for his own organizations, other local nonprofits, websites for friends and family, whatever he could think of.
+    Over time, Chip transitioned from asking questions on Stack Overflow to answering them. He loves to find new posters who seem to be at the beginning of their journey and offer them the inclusive, welcoming support he mostly received. He remembers how much SO helped him out when he would get stuck, or lost, or off the rails and he wants to give back.
+    <br>
+    <br>
+    In 2023, Chip was lucky enough to be offered his first full-time software engineering position, building a brand new applicant tracking system with a local company in Grand Rapids, MI. The bar was high, this company wasn't hiring junior developers and everyone was expected to be knowledgeable and proficient in a wide range of technologies. Chip has loved getting to work in Ruby on Rails while also expanding his skillset in React, Docker, Kafka, OpenSearch, Redis, and more.
+    </div>
+  tags: []
+  comments:
+  - votes: 21
+    published_at: 2024-11-05 17:01:09 UTC
+    author: erminia-rau-do
+    body: |-
+      <div>Wow! When he lists it out like this, Chip has actually been working on tech for a long time.</div>

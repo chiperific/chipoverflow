@@ -1,0 +1,58 @@
+---
+question:
+  id: 9
+  title: Who can vouch for Chip?
+  title_slug: Who-vouch-Chip
+  accepted: false
+  views: 112
+  votes: 54
+  rank: 274
+  published_at: 2024-11-03 06:47:55 UTC
+  author: oren-graham
+  body: |-
+    <div>Is there anyone who likes Chip enough to offer to be a reference on his behalf?</div>
+  tags:
+  - capybara
+  - database-schema
+  - rspec
+answers:
+- id: 19
+  accepted: false
+  views: 45
+  votes: 39
+  rank: 6
+  published_at: 2024-11-03 12:53:19 UTC
+  author: ross-hunter
+  body: |-
+    <div>I'll gladly tell you about Chip.<br>You can email <a href="mailto:ross-hunter@ross-hunter.com">ross-hunter@ross-hunter.com</a> or call <a href="tel:616-204-2195">616-204-2195</a></div><div><br></div>
+  tags: []
+- id: 20
+  accepted: false
+  views: 27
+  votes: 19
+  rank: 3
+  published_at: 2026-02-13 05:05:38 UTC
+  author: andrew-davison
+  body: |-
+    <div>I mentored Chip in his first software engineer job. I'd be happy to tell you what I though of our time together.<br>You can reach me at <a href="mailto:adavison978@gmail.com">adavison978@gmail.com</a> or <a href="tel:(408) 734-6628">(408) 734-6628</a></div>
+  tags: []
+- id: 21
+  accepted: false
+  views: 42
+  votes: 22
+  rank: 145
+  published_at: 2026-10-05 07:32:01 UTC
+  author: josh-hall
+  body: |-
+    <div>Chip and I worked together for over 2 years at the software company in Grand Rapids, MI. I started off as a frontend developer, Chip as a backend developer. We helped each other become full-stack developers. I showed him how React works and he taught me most of what I know about Ruby on Rails.<br>Call me at <a href="tel:+16162168257">(616) 216-8257</a> or email me at <a href="mailto:jch2617@gmail.com">jch2617@gmail.com</a></div>
+  tags: []
+- id: 23
+  accepted: false
+  views: 18
+  votes: 18
+  rank: 3
+  published_at: 2024-11-08 19:00:28 UTC
+  author: amanda-mulder
+  body: |-
+    <div>I worked with Chip at 20 Liters for 8 years. Before that, we worked at Red Cross together for 7 years. What do you want to know?<br><br>You can reach me at <a href="mailto:amanda.meldrum@gmail.com">amanda.meldrum@gmail.com</a> or <a href="tel:+12313013189">(231) 301-3189</a></div>
+  tags: []

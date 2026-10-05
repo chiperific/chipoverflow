@@ -39,22 +39,6 @@ class Post < ApplicationRecord
     body.plain_text_body&.gsub("\n", '')
   end
 
-  def for_seed
-    {
-      id: id,
-      author_id: author_id,
-      title: title,
-      title_slug: title_slug,
-      body: body.to_trix_html,
-      question_id: question_id,
-      accepted: accepted,
-      views: views,
-      votes: votes,
-      rank: rank,
-      published_at: published_at.to_s
-    }
-  end
-
   def has_accepted_answer?
     # answers don't have answers
     return false if is_answer?

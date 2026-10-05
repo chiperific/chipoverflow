@@ -1,0 +1,25 @@
+---
+question:
+  id: 6
+  title: Are there any specific pieces of code Chip would like to show off?
+  title_slug: Are-there-specific-pieces-code-Chip
+  accepted: false
+  views: 60
+  votes: 10
+  rank: 40
+  published_at: 2024-10-30 14:30:58 UTC
+  author: vanda-toy
+  body: |-
+    <div>Anything he's particularly proud of?</div>
+  tags: []
+answers:
+- id: 16
+  accepted: true
+  views: 43
+  votes: 22
+  rank: 0
+  published_at: 2024-10-31 09:09:21 UTC
+  author: jake-macejkovic
+  body: |-
+    <div>Funny you should ask.<br><br>Chip went through the code bases of his biggest projects and made a bunch of comments on stuff he thinks shows what he knows and can do.<br>It's almost as if he knew you would ask this question, weird.<br><br></div><h1><a href="https://github.com/chiperific/chipoverflow/blob/main/HELLO_INTERVIEWERS.md">Please take a look</a>.</h1>
+  tags: []

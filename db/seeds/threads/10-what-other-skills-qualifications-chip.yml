@@ -1,0 +1,27 @@
+---
+question:
+  id: 10
+  title: What other skills and qualifications does Chip have (besides software)?
+  title_slug: What-other-skills-qualifications-Chip
+  accepted: false
+  views: 83
+  votes: 67
+  rank: 288
+  published_at: 2024-11-23 10:19:10 UTC
+  author: dr-ronald-feil
+  body: |-
+    <div>I mean, this should be a softball question since a big chunk of Chip's paid career has been with non-software agencies.</div>
+  tags:
+  - ruby
+  - ruby-on-rails
+answers:
+- id: 22
+  accepted: true
+  views: 109
+  votes: 121
+  rank: 476
+  published_at: 2024-11-26 03:06:26 UTC
+  author: jamie-conn
+  body: |-
+    <div>Chip started in non-profits straight out of college and was given some incredible opportunities to quickly advance into management and supervision roles.<br><br></div><div>In fact, the reason he sports a "<a href="https://gillette.com/en-us/shaving-tips/facial-hair-styles/beard-styles">short boxed beard</a>" is because he was supervising a large volunteer base of primarily retirees at the ripe age of 22. Not surprisingly, 65-year-olds seemed to relate to him better with some facial hair.<br><br>While a degree in psychology gave him some tools to help him build functional teams, collaborate with partners and connect with staff and volunteers, Chip needed real management organizational skills.<br><br>Chip learned PHP, Apache and MySQL because he needed the tools to achieve his goals. In the same way, Chip delved into management resources to become the type of boss he would be happy to work for (one of his favorite resources is <a href="https://www.manager-tools.com/">Manager Tools</a>).<br><br>He also took advantage of training opportunities to hone skills in partnership development, program planning, financial administration, volunteer recruitment and retention, and full-cycle grant management.<br><br>Because of Chip's 18+ years of professional experience, he can offer more than just good code:<br><br></div><div><strong>Client and customer relationship management</strong></div><div>Chip has managed major donor relationships, established lasting connections with government, business and nonprofit parters, and performed casework with a variety of clients from refugees to disaster victims. You can feel comfortable having Chip talk with clients and customers.<br><br></div><div><strong>Specialist to Generalist bridging</strong></div><div>Similar to clients and customers, specialists (e.g. developers) tend to have a language and knowledge set all their own, which doesn't always translate or interface with non-technical audiences. There is a common sterotype in our sector about developers who don't interface well with clients because social skills are <em>supposedly</em> inversely related to technical expertise. While this is mostly a <a href="https://blog.codegiant.io/20-programming-myths-5c6155964231">false, dumb myth</a>, I think it stems from the challenge of translating a software development perspective to a non-technical partner.<br><br>A much more accurate sterotype is that non-profits are tech-poor and tech-illiterate. Chip, as a fan of things digital and binary, has spent a lot of time communicating an I.T. perspective to audiences that tend towards Luddit-ism.<br><br></div><div><strong>Budgeting, planning, project managing</strong></div><div>Chip is not an Agile expert, but has lots of experience managing projects from conception through completion. And the projects have varied extensively as well: community events, fundraisers, grant programs, community safety initiatives, water filter R&amp;D projects, and disaster response. Each type of project requires its own unique strategy and Chip is confident he'll be able to quickly pick up whatever management strategies your teams use to deliver quality products.<br><br></div><div>At least half of project management is about group dynamics, and that's where Chip thrives.</div>
+  tags: []

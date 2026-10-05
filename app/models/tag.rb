@@ -13,15 +13,6 @@ class Tag < ApplicationRecord
     posts.only_questions
   end
 
-  def for_seed
-    {
-      id: id,
-      name: name,
-      description: description,
-      score: score
-    }
-  end
-
   def calculate_score!
     self.score = 0
 

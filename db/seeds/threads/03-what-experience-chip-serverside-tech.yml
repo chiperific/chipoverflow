@@ -1,0 +1,36 @@
+---
+question:
+  id: 3
+  title: What experience does Chip have with server-side tech?
+  title_slug: What-experience-Chip-serverside-tech
+  accepted: false
+  views: 33
+  votes: 16
+  rank: 19
+  published_at: 2024-10-31 19:00:57 UTC
+  author: deshawn-o-hara
+  body: |-
+    <div>Chip has already said he's not a prodigy designer, so if he's not a <strong>front-end</strong> wizard, how are his <strong>back-end</strong> skills?</div>
+  tags:
+  - actiontext
+  - ajax
+  - api
+  - coffeescript
+  - css
+  - datatables
+  - html
+  - javascript
+  - jquery
+  - json
+  - xml
+answers:
+- id: 13
+  accepted: true
+  views: 30
+  votes: 15
+  rank: 11
+  published_at: 2024-11-04 21:50:36 UTC
+  author: prof-ruthie-ebert
+  body: |-
+    <div>If Chip could focus on one end of the stack, he much prefers the server side.<br><br>When Chip wanted to put his Access databases online, he stumbled into the depressing world of WAMP and LAMP stacks.<br>Even though the learning curve was steep, he mastered enough MySQL and PHP to get his data to the client-side.<br><br>PHP was the aggravating part. What he enjoyed was learning about the data structures, types and queries he could run to create, access and transform his data.<br>Discovering Ruby on Rails <em>(thanks Mark!)</em> was a huge leap forward, especially because ActiveRecord is such a nice abstraction layer above raw SQL for almost anything you need.<br><br>Besides, focusing on Models, Controllers, and Jobs is just way more rewarding than tweaking views.<br><br>Chip's first few apps were standard Rails web frameworks (starting with Rails 3), then <a href="https://ross-hunter.com/">Ross Hunter</a> taught him about webhooks and APIs. Chip learned AJAX and JSON as the norm became avoiding full-page loads.<br>&nbsp;<br>And Chip just jumped into Turbo and Stimulus for this portfolio project you're looking at right now.<br><br></div><h1>Chip has experience with:</h1><div><br><strong>Web Frameworks:</strong></div><ul><li>Ruby on Rails (API and web)</li><li>Wordpress</li><li>MS SharePoint (yes, but ew)</li></ul><div><br><strong>Relational Databases:</strong></div><ul><li>MySQL</li><li>SQLite</li><li>Postgres (his favorite)</li></ul><div><br><strong>Datastores:</strong></div><ul><li>File servers</li><li>In-memory stores (Redis)</li><li>Amazon S3</li></ul><div><br><strong>Servers and proxies:</strong></div><ul><li>Apache (from the dark, bitter WAMP/LAMP days)</li><li>Puma</li><li>Unicorn</li><li>Thin</li><li>Foreman</li><li>ngrok</li></ul><div><br><strong>Job services/processors:</strong></div><ul><li>Sidekiq</li><li>Delayed::Job (R.I.P)</li></ul><div><br><strong>Hosting / PaaS:</strong></div><ul><li>Heroku</li><li>Railway</li><li>WPEngine</li></ul>
+  tags: []

@@ -13,16 +13,6 @@ class Comment < ApplicationRecord
 
   after_save :update_tags_scores
 
-  def for_seed
-    {
-      post_id: post_id,
-      body: body.to_trix_html,
-      votes: votes,
-      published_at: published_at.to_s,
-      author_id: author_id
-    }
-  end
-
   def randomly_increase_votes!
     # there shouldn't be more votes on the comment than there are votes on the post
     upper = [2, post.votes].max
