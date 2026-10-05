@@ -1,0 +1,37 @@
+---
+question:
+  id: 5
+  title: How does Chip ask for help? What does he do when he gets stuck?
+  title_slug: How-Chip-ask-help-What
+  accepted: false
+  views: 44
+  votes: 13
+  rank: 12
+  published_at: 2024-11-04 13:41:39 UTC
+  author: sal-schowalter
+  body: |-
+    <div>Being the new member of a team comes with lots to learn. There's a risk that Chip will interrupt the flow of the team while he catches up.</div>
+  tags:
+  - api
+  - authentication
+  - config
+  - database-design
+  - database-schema
+  - devise
+  - json
+  - postgresql
+  - redis
+  - ruby
+  - ruby-on-rails
+  - sidekiq
+answers:
+- id: 15
+  accepted: true
+  views: 12
+  votes: 8
+  rank: 0
+  published_at: 2024-11-06 14:20:17 UTC
+  author: rep-enoch-kerluke
+  body: |-
+    <div>Helping the new team member learn what they need to while maintaining the pace of progress is a challenge.<br>If Chip is disruptive by needing help and assistance all the time, or if Chip just tries to struggle through and isn't able to actually accomplish anything, the result will be the same.<br><br>Asking for help is important, but knowing <strong>when and how</strong> to ask for help can make a difference.<br><br>Chip believes in spending at least a little bit of time exploring, searching, and trying before asking for help. He wants to be able to ask the right questions, that he's formed from an understanding of the problem.<br>He also recognizes that the team has expertise, history and context that he might not have, and not taping into that resource is wasteful and foolish.<br><br>There are a few reasons people <strong>don't</strong> ask for help:</div><ul><li>Ego - they don't want to look stupid or weak</li><li>Fear - they think the team will ostracize or look down on them for not knowing</li></ul><div><br>The structure and personality of the team can address these issues proactively. If senior members of the team model asking for help, it normalizes and encourages the behavior. If the routines of the team encourage collaboration, it offers a good timeframe in which to ask questions.<br><br>If the team is social-first, they may prefer that questions be raised as they occur. If the team parses out the work so people can put their heads down and deliver, it may be best to avoid interrupting them during these sprints.<br><br></div><div><strong>This is a dual responsibility. The team needs to show, and the member needs to learn, how and when to ask questions.</strong></div>
+  tags: []

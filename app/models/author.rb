@@ -39,18 +39,6 @@ class Author < ApplicationRecord
     end
   end
 
-  def for_seed
-    {
-      id: id,
-      name: name,
-      reputation: reputation,
-      gold: gold,
-      silver: silver,
-      bronze: bronze,
-      gravatar_url: gravatar_url
-    }
-  end
-
   # Convenience function for changing the Gravatar image
   def change_gravatar!
     self.gravatar_url = "https://www.gravatar.com/avatar/#{Faker::Number.unique.number(digits: 8)}?s=48&d=identicon&r=PG"

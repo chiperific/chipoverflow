@@ -1,0 +1,42 @@
+---
+question:
+  id: 7
+  title: What's the test coverage like on Chip's applications? How and when does he write tests?
+  title_slug: Whats-the-test-coverage-like-on-Chips-applications
+  accepted: false
+  views: 44
+  votes: 14
+  rank: 16
+  published_at: 2024-11-02 12:40:10 UTC
+  author: alfredo-kreiger
+  body: |-
+    <pre># TODO: write a test for this question.</pre>
+  tags: []
+  comments:
+  - votes: -1
+    published_at: 2024-11-02 17:27:53 UTC
+    author: conrad-price
+    body: |-
+      <div>Whoa, long answer. Wonder if anyone else read to the end? Maybe ChipOverflow needs a character limit?</div>
+answers:
+- id: 17
+  accepted: true
+  views: 22
+  votes: 20
+  rank: 0
+  published_at: 2024-11-05 18:14:33 UTC
+  author: mr-rocco-corkery
+  body: |-
+    <div>Chip was born into the programming world in the golden era of TDD and thus was presented with write-the-test-first design patterns in many tutorials and guides. A practice which chafed at him from early on but he spent way too long trying to get comfortable with.<br><br>Chip's main production app, <a href="https://make.20liters.org/">filterbuildscheduler</a>, has nearly complete system, model and job tests. At time of writing: 1,073 passing tests.<br><br>On the other end of the spectrum, Chip only has 462 tests in his other production app: <a href="https://track.20liters.org/">liters_tracker</a>. While the codebase is smaller, the test coverage is also smaller. The main part of the application is a forward-facing stats and story viewer. That part of the app has robust testing coverage. The back-end, data entry and reporting side that is only really touched by 3 people occasionally is lacking in some coverage.<br><br>Instead of writing tests before implementing code, Chip has found it much more comfortable and natural to inject a final review-everything-and-write-tests step into his development-deployment cycle. He has found that performing a final inspection that includes writing tests, cleaning up, fine tuning, and refactoring <em>always </em>leads him to discovering some hidden mistakes, conflicting ideas, unused methods, slow code, etc.<br><br>Chip believes the most important tests are system and feature that test the full flow of data from beginning to end to achieve the desired result. While harder to write, knowing the whole system works in concert to produce the desired result is the key.</div><div><br>If your interest is piqued, read on for a more nuanced delve into Chip's thinking on this matter.<br>======================================================================<br><br>While TDD seems to Chip like a good moral practice, akin to 6-month dental checks, it often ran afoul of how he approaches software development.<br>The practical use case for TDD is a piece of straight-forward, encapsulated code. When you know exactly what you are about to do, writing a test for it first is very achievable.&nbsp;<br><br></div><pre>I need a new method: Post#has_answers?
+    1. Write a test:
+      A. When a Post is not a question, it should return false
+      B. When a Post is a question,
+        1. And it has one or more associated answers, it should return true
+    2. Write the method
+    3. Ensure the test passes</pre><div><br>But most of the time, Chip starts with a broader scope: "I want to retrieve, store, occasionally update and present my StackOverflow reputation and badges on this site."<br>When starting on this feature, there are a few paths Chip could take and he usually likes to start down one of those paths and see what he finds:<br><br></div><pre>1. Retrieve reputation and badge info from SO profile
+      A. Does SO have an open API?
+      B. Does SO offer a JSON representation of a profile?
+      C. If not A or B, we might have to get and parse the HTML of the SO profile</pre><div>Starting with a specific test at this point is impossible (after doing some research, <a href="https://github.com/chiperific/chipoverflow/blob/main/app/jobs/update_reputation_job.rb">C was the answer</a>).<br><br>We're still not to the level of specificity required of a good test. So Chip starts toying with ideas and trying some strategies. He eventually settles on using Net::HTTP and&nbsp; Nokogiri in an ApplicationJob, but once he gets into the flow of tinkering and building, he rarely stops moving forward to go write failing tests first.<br><br>Which leads us to Chip's preferences (from his upcoming memoir):</div><ol><li><a href="https://www.codewithjason.com/examples-pointless-rspec-tests/">Don't test what Rails (or Ruby or a gem) does for us</a>.</li><li>Test behaviors, not implementation</li><li>Write more or more in-depth tests for dense and complicated code&nbsp;</li><li>Write tests that explain what a feature is supposed to accomplish, they serve as documentation</li></ol>
+  tags:
+  - association
+  - authentication

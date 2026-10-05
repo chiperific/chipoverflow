@@ -51,16 +51,6 @@ class AuthorTest < ActiveSupport::TestCase
     end
   end
 
-  context '#for_seed' do
-    should 'be a hash' do
-      assert_equal Hash, subject.for_seed.class
-    end
-
-    should 'have 7 items' do
-      assert_equal 7, subject.for_seed.size
-    end
-  end
-
   context '#change_gravatar!' do
     should 'change the gravatar URL field' do
       assert_not_equal subject.gravatar_url, subject.change_gravatar!

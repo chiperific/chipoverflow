@@ -11,16 +11,6 @@ class PostTest < ActiveSupport::TestCase
     end
   end
 
-  context '#for_seed' do
-    should 'return a Hash' do
-      assert_equal Hash, subject.for_seed.class
-    end
-
-    should 'contain the important parts of a Post' do
-      assert_equal 11, subject.for_seed.size
-    end
-  end
-
   context '#has_accepted_answer?' do
     context 'when post is an answer' do
       should 'return false' do

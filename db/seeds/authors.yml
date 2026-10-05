@@ -1,0 +1,233 @@
+---
+ross-hunter:
+  id: 1
+  name: Ross Hunter
+  reputation: 231
+  gold: 5
+  silver: 7
+  bronze: 4
+  gravatar_url: "/rh.png"
+andrew-davison:
+  id: 2
+  name: Andrew Davison
+  reputation: 432
+  gold: 3
+  silver: 11
+  bronze: 29
+  gravatar_url: "/ad.jpeg"
+josh-hall:
+  id: 3
+  name: Josh Hall
+  reputation: 321
+  gold: 2
+  silver: 8
+  bronze: 12
+  gravatar_url: "/jh.jpeg"
+amanda-mulder:
+  id: 4
+  name: Amanda Mulder
+  reputation: 716
+  gold: 2
+  silver: 9
+  bronze: 40
+  gravatar_url: "/am.jpg"
+debrah-vandervort:
+  id: 5
+  name: Debrah Vandervort
+  reputation: 406
+  gold: 0
+  silver: 12
+  bronze: 40
+  gravatar_url: https://www.gravatar.com/avatar/88145222?s=48&d=identicon&r=PG
+rep-aldo-hayes:
+  id: 6
+  name: Rep. Aldo Hayes
+  reputation: 593
+  gold: 2
+  silver: 11
+  bronze: 15
+  gravatar_url: https://www.gravatar.com/avatar/99204635?s=48&d=identicon&r=PG
+melissa-satterfield-iii:
+  id: 7
+  name: Melissa Satterfield III
+  reputation: 110
+  gold: 0
+  silver: 8
+  bronze: 31
+  gravatar_url: https://www.gravatar.com/avatar/55247490?s=48&d=identicon&r=PG
+sen-patrica-grimes:
+  id: 8
+  name: Sen. Patrica Grimes
+  reputation: 5
+  gold: 1
+  silver: 12
+  bronze: 12
+  gravatar_url: https://www.gravatar.com/avatar/30695441?s=48&d=identicon&r=PG
+deshawn-o-hara:
+  id: 9
+  name: Deshawn O'Hara
+  reputation: 227
+  gold: 5
+  silver: 0
+  bronze: 9
+  gravatar_url: https://www.gravatar.com/avatar/95940797?s=48&d=identicon&r=PG
+kenny-reynolds:
+  id: 10
+  name: Kenny Reynolds
+  reputation: 463
+  gold: 4
+  silver: 9
+  bronze: 47
+  gravatar_url: https://www.gravatar.com/avatar/20380119?s=48&d=identicon&r=PG
+sal-schowalter:
+  id: 11
+  name: Sal Schowalter
+  reputation: 355
+  gold: 4
+  silver: 16
+  bronze: 29
+  gravatar_url: https://www.gravatar.com/avatar/98447265?s=48&d=identicon&r=PG
+vanda-toy:
+  id: 12
+  name: Vanda Toy
+  reputation: 510
+  gold: 3
+  silver: 5
+  bronze: 44
+  gravatar_url: https://www.gravatar.com/avatar/83590655?s=48&d=identicon&r=PG
+alfredo-kreiger:
+  id: 13
+  name: Alfredo Kreiger
+  reputation: 668
+  gold: 1
+  silver: 11
+  bronze: 21
+  gravatar_url: https://www.gravatar.com/avatar/19546421?s=48&d=identicon&r=PG
+dr-quinn-stamm:
+  id: 14
+  name: Dr. Quinn Stamm
+  reputation: 576
+  gold: 2
+  silver: 1
+  bronze: 41
+  gravatar_url: https://www.gravatar.com/avatar/83087630?s=48&d=identicon&r=PG
+prof-ruthie-ebert:
+  id: 15
+  name: Prof. Ruthie Ebert
+  reputation: 471
+  gold: 0
+  silver: 18
+  bronze: 41
+  gravatar_url: https://www.gravatar.com/avatar/39742395?s=48&d=identicon&r=PG
+pearl-mertz:
+  id: 16
+  name: Pearl Mertz
+  reputation: 839
+  gold: 2
+  silver: 15
+  bronze: 14
+  gravatar_url: https://www.gravatar.com/avatar/71821572?s=48&d=identicon&r=PG
+mr-rocco-corkery:
+  id: 17
+  name: Mr. Rocco Corkery
+  reputation: 810
+  gold: 3
+  silver: 17
+  bronze: 27
+  gravatar_url: https://www.gravatar.com/avatar/50245840?s=48&d=identicon&r=PG
+claudia-pagac-ii:
+  id: 18
+  name: Claudia Pagac II
+  reputation: 192
+  gold: 5
+  silver: 1
+  bronze: 18
+  gravatar_url: https://www.gravatar.com/avatar/16444240?s=48&d=identicon&r=PG
+rep-enoch-kerluke:
+  id: 19
+  name: Rep. Enoch Kerluke
+  reputation: 40
+  gold: 1
+  silver: 8
+  bronze: 14
+  gravatar_url: https://www.gravatar.com/avatar/93188133?s=48&d=identicon&r=PG
+jake-macejkovic:
+  id: 20
+  name: Jake Macejkovic
+  reputation: 600
+  gold: 2
+  silver: 17
+  bronze: 37
+  gravatar_url: https://www.gravatar.com/avatar/60920599?s=48&d=identicon&r=PG
+miss-joline-west:
+  id: 21
+  name: Miss Joline West
+  reputation: 289
+  gold: 1
+  silver: 10
+  bronze: 24
+  gravatar_url: https://www.gravatar.com/avatar/81811582?s=48&d=identicon&r=PG
+earle-wuckert:
+  id: 22
+  name: Earle Wuckert
+  reputation: 271
+  gold: 0
+  silver: 14
+  bronze: 9
+  gravatar_url: https://www.gravatar.com/avatar/27429699?s=48&d=identicon&r=PG
+hiedi-mohr:
+  id: 23
+  name: Hiedi Mohr
+  reputation: 170
+  gold: 4
+  silver: 13
+  bronze: 12
+  gravatar_url: https://www.gravatar.com/avatar/92059508?s=48&d=identicon&r=PG
+erminia-rau-do:
+  id: 24
+  name: Erminia Rau DO
+  reputation: 389
+  gold: 1
+  silver: 17
+  bronze: 14
+  gravatar_url: https://www.gravatar.com/avatar/33894798?s=48&d=identicon&r=PG
+elda-mclaughlin-dc:
+  id: 25
+  name: Elda McLaughlin DC
+  reputation: 416
+  gold: 2
+  silver: 17
+  bronze: 32
+  gravatar_url: https://www.gravatar.com/avatar/90133171?s=48&d=identicon&r=PG
+oren-graham:
+  id: 26
+  name: Oren Graham
+  reputation: 248
+  gold: 2
+  silver: 7
+  bronze: 8
+  gravatar_url: https://www.gravatar.com/avatar/77619091?s=48&d=identicon&r=PG
+conrad-price:
+  id: 27
+  name: Conrad Price
+  reputation: 652
+  gold: 1
+  silver: 7
+  bronze: 27
+  gravatar_url: https://www.gravatar.com/avatar/74040183?s=48&d=identicon&r=PG
+dr-ronald-feil:
+  id: 28
+  name: Dr. Ronald Feil
+  reputation: 991
+  gold: 3
+  silver: 13
+  bronze: 25
+  gravatar_url: https://www.gravatar.com/avatar/99505885?s=48&d=identicon&r=PG
+jamie-conn:
+  id: 29
+  name: Jamie Conn
+  reputation: 605
+  gold: 4
+  silver: 7
+  bronze: 32
+  gravatar_url: https://www.gravatar.com/avatar/81806861?s=48&d=identicon&r=PG

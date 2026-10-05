@@ -31,16 +31,6 @@ class CommentTest < ActiveSupport::TestCase
     end
   end
 
-  context '#for_seed' do
-    should 'return a Hash' do
-      assert_equal Hash, subject.for_seed.class
-    end
-
-    should 'include important fields' do
-      assert_equal 5, subject.for_seed.size
-    end
-  end
-
   context '#randomly_increase_votes!' do
     should 'increase the number of votes' do
       assert_operator subject.votes, :<, subject.randomly_increase_votes!
